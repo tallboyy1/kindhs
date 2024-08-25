@@ -16,8 +16,6 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/og.png",
-        width: 1200,
-        height: 630,
         alt: "Kind Hearts Services LLC",
       },
     ],
