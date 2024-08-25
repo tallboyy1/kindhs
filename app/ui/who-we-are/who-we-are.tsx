@@ -4,7 +4,7 @@ export default function WhoWeAre() {
     return(
         <>
             <main className="w-10/12 bg-white my-14 flex-none md:flex mx-auto gap-6">
-                <div className="mt-auto mb-8 md:mb-0">
+                <div className="mt-auto mb-4 md:mb-0">
                     <img 
                         src="/home/who-we-are-1.png" 
                         alt=""
