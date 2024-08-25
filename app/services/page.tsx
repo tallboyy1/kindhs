@@ -9,7 +9,7 @@ export default function Page () {
         <>
             {/* <HeroSection /> */}
             <ServicesHero />
-            <div className="mt-20 mb-14">
+            <div className="mt-6 md:mt-20 mb-14">
                 <DiscoverServiceCard />
             </div>
             <div className="">
@@ -17,8 +17,8 @@ export default function Page () {
             </div>
 
             {/* <section className="grid grid-cols-2 gap-4 mx-12 my-24 h-5/6"> */}
-            <section className="flex-none lg:justify-around lg:flex gap-4 mx-12 mt-15 mb-20">
-                <div className="tiny:w-60 sm:w-80 md:w-96 mx-auto mt-20">
+            <section className="flex-none lg:justify-around lg:flex gap-4 mx-4 md:mx-8 mt-6 mb-20">
+                <div className="tiny:w-80 sm:w-80 md:w-96 mx-auto mt-20">
                     <h3 className="text-lg md:text-2xl font-bold">Why choose Nursing Care?</h3>
                     <p className="text-xs font-light leading-6 my-4">We uphold the highest standards of medical excellence and patient safety, ensuring that every patient receives personalized attention and support throughout their healthcare journey.</p>
                     <div className="flex mb-12 items-center">
@@ -53,7 +53,7 @@ export default function Page () {
                     </div>
                 </div>
                 <div className="mt-10 w-max mx-auto">
-                    <div className="w-60 tiny:w-60 sm:w-80 md:w-96 lg:w-full">
+                    <div className="w-72 tiny:w-80 sm:w-80 md:w-96 lg:w-full">
                         <img 
                             src={"/services/services-why-choose-image.png"} 
                             alt="" 
