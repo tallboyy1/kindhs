@@ -34,15 +34,15 @@ export default function WhyChoose(){
 
     return (
         <>
-            <main className="bg-other-blue py-20 px-4 md:px-10 my-8 mx-4 md:mx-5 rounded-xl flex-none md:flex gap-10 justify-around">
-                <section className="my-auto mb-12 md:mb-0">
+            <main className="bg-other-blue py-6 md:py-20 px-4 md:px-10 my-8 mx-4 md:mx-5 rounded-xl flex-none md:flex gap-10 justify-around">
+                <section className="my-auto mb-4 md:mb-0">
                     <div className="mb-10">
                         <h1 className="text-2xl md:text-3xl lg:text-3xl font-semibold">Why choose Nursing Care</h1>
                     </div>
                     <div>
                         <div className="h-64">
 
-                        <div className="h-full w-full max-w-xl mx-auto my-auto space-y-4">
+                        <div className="h-full w-full max-w-xl mx-auto md:my-auto space-y-4">
                             {faqData.map((faq, index) => (
                                 <div key={index} className="bg-white rounded-xl">
                                     <div className="w-full md:w-96">
@@ -73,7 +73,7 @@ export default function WhyChoose(){
 
                     </div>
                 </section>
-                <section className="my-auto">
+                <section className="md:my-auto">
                             <div>
                                 <Image 
                                     src={"/home/why-choose.png"} 

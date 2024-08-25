@@ -35,7 +35,7 @@ const FAQAccordion: React.FC = () => {
 
   return (
     <div className="w-full max-w-4xl mx-auto mb-20 space-y-4">
-        <h2 className='text-center mb-14 text-1xl md:text-3xl font-semibold'>Have questions? (FAQs)</h2>
+        <h2 className='text-center mb-14 text-2xl md:text-2xl font-semibold'>Have questions? (FAQs)</h2>
       {faqData.map((faq, index) => (
         <div key={index} className="mx-5">
           <button

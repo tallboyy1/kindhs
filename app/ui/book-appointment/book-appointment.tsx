@@ -38,7 +38,7 @@ export default function BookAppointment(){
     return (
         <>
             <main className="p-4 md:p-8 rounded-3xl mx-4 md:mx-16 flex-none md:flex bg-secondary">
-                <section className="bg-white p-8 rounded-lg basis-2/3">
+                <section className="bg-white p-2 md:p-8 rounded-lg basis-2/3">
                     <h3 className="text-2xl text-secondary font-medium">Book appointment</h3>
                     <div className="mt-4">
                         <form>
@@ -67,7 +67,7 @@ export default function BookAppointment(){
                                 <textarea rows={7} className={`${styles.input} rounded-lg mt-50 py-3 px-3 text-xs w-full`} name="message" placeholder="Additional Information" required></textarea>
                             </div>
                             <div className="mt-2 flex-none lg:flex lg:justify-between flex-wrap">
-                                <div className="items-center">
+                                <div className="flex items-start">
                                     <input type="checkbox" className="mr-2"/>
                                     <span className="text-xs">By submitting this form, you agree to our friendly <span className="underline">privacy policy</span></span>
                                 </div>

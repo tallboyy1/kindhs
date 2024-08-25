@@ -17,10 +17,10 @@ export default function Home() {
     <>
     <HeroSection />
     <main>
-        <section className="mt-24 mb-16 mx-auto">
+        <section className="mt-10 md:mt-24 md:mb-16 mx-auto">
           <div className="w-max mx-auto text-center">
             <Bubble text="Discover the heart behind Nursing Care"/>
-            <h1 className="mb-12 mt-8 text-3xl md:text-4xl font-bold">Discover our services</h1>
+            <h1 className="mb-6 md:mb-10 mt-8 text-3xl md:text-4xl font-bold">Discover our services</h1>
           </div>
           <DiscoverServiceCard />
         </section>

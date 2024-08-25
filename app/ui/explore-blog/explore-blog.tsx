@@ -34,7 +34,7 @@ export default function ExploreBlog() {
     return (
         <>
             <main className="p-4 md:p-8">
-                <h2 className="text-xl font-semibold">Explore our <span className="text-blue">blog</span></h2>
+                <h2 className="text-2xl font-semibold">Explore our <span className="text-blue">blog</span></h2>
                 <div>
                     {blogData.map((blog, index) => (
                         <Link key={index} href={`/blog/${blog.slug}`}>
