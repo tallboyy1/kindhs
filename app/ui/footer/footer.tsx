@@ -1,5 +1,6 @@
 import styles from "@/app/ui/styles/footer.module.css"
 import Image from "next/image"
+import Link from "next/link"
 
 export default function Footer(){
     return (
@@ -66,15 +67,15 @@ export default function Footer(){
                                 <h3 className="mb-5 font-medium">Menu</h3>
                                 <div className="flex gap-10">
                                     <div>
-                                        <li className="mb-3"><small>Home</small></li>
-                                        <li className="mb-3"><small>About Us</small></li>
-                                        <li className="mb-3"><small>Services</small></li>
-                                        <li className="mb-3"><small>Join our Team</small></li>
+                                        <li className="mb-3"><Link href="/"><small>Home</small></Link></li>
+                                        <li className="mb-3"><Link href="about"><small>About Us</small></Link></li>
+                                        <li className="mb-3"><Link href="services"><small>Services</small></Link></li>
+                                        <li className="mb-3"><Link href="join-team"><small>Join our Team</small></Link></li>
                                     </div>
                                     <div> 
-                                        <li className="mb-3"><small>Employee Portal</small></li>
-                                        <li className="mb-3"><small>Blog</small></li>
-                                        <li className="mb-3"><small>Donate</small></li>
+                                        <li className="mb-3"><Link href="employee-portal"><small>Employee Portal</small></Link></li>
+                                        <li className="mb-3"><Link href="blog"><small>Blog</small></Link></li>
+                                        <li className="mb-3"><Link href="contact"><small>Donate</small></Link></li>
                                     </div>
                                 </div>
                             </ul>

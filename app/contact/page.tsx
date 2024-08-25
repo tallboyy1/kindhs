@@ -49,7 +49,7 @@ export default function Page(){
             </main>
 
             <div>
-                <p className="text-center my-12">Fix Map Here</p>
+                <iframe className="w-screen mb-12" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3067.1932861417636!2d-75.60947112397963!3d39.75776849548223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c6fdc30dbfffff%3A0xebeb51b6df203be!2s1013%20Centre%20Rd%20Suite%20403S%2C%20Wilmington%2C%20DE%2019805%2C%20USA!5e0!3m2!1sen!2sgh!4v1724623499567!5m2!1sen!2sgh" width="800" height="600" style={{border:"0"}} loading="lazy"></iframe>
             </div>
         </>
     )
