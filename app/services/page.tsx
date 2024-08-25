@@ -53,7 +53,7 @@ export default function Page () {
                     </div>
                 </div>
                 <div className="mt-10 w-max mx-auto">
-                    <div className="w-72 tiny:w-80 sm:w-80 md:w-96 lg:w-full">
+                    <div className="w-72 also-tiny:w-80 tiny:w-80 sm:w-80 md:w-96 lg:w-full">
                         <img 
                             src={"/services/services-why-choose-image.png"} 
                             alt="" 

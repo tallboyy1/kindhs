@@ -10,6 +10,8 @@ const config: Config = {
     screens: {
       'new-tiny': '360px',
       
+      'also-tiny': '400px',
+
       'tiny': '450px',
       
       'sm': '640px',

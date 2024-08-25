@@ -1,5 +1,3 @@
-import BlogCard from "@/app/ui/blog-card/blog-card";
-import Bubble from "@/app/ui/bubble-label/bubble-label";
 import DedicatedTeam from "@/app/ui/team-card/dedicated-team";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -143,8 +141,7 @@ export default function ServiceDetailsPage({ params }: { params: { slug: string 
                     </div>
                 </div>
                 <div className="mt-10 w-max mx-auto">
-                    <div className="w-72 tiny:w-96 md:w-96 mx-auto lg:w-full">
-                    {/* <div className="w-60 tiny:w-60 sm:w-80 md:w-96 lg:w-full"> */}
+                    <div className="w-72 also-tiny:w-80 tiny:w-96 md:w-96 mx-auto lg:w-full">
                         <img 
                             src={"/services/services-why-choose-image.png"} 
                             alt="" 
@@ -157,8 +154,9 @@ export default function ServiceDetailsPage({ params }: { params: { slug: string 
                 </div>
             </section>
 
-            <section>
-                <main className="w-9/12 my-20 mx-auto bg-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 lg:gap-16">
+            <section className="my-5 md:my-20">
+                <h1 className="text-black text-3xl w-max mx-auto font-semibold">How it works</h1>
+                <main className="w-9/12 my-10 mx-auto bg-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 lg:gap-16">
                     <div className="mb-4 lg:mb-0 text-center">
                         <Image src={"/services/details/how-1.svg"} className="mx-auto" alt="" width={50} height={30}/>
                         <h1 className="text-secondary w-max mx-auto text-2xl my-4 font-bold">Consultation</h1>
