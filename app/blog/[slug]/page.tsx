@@ -52,7 +52,7 @@ export default function BlogDetailsPage({ params }: { params: { slug: string } }
 
             {/* Image Section */}
             <div className="relative flex justify-center -mt-32 md:-mt-40">
-                <div className="relative w-full max-w-xs md:max-w-3xl lg:max-w-5xl">
+                <div className="relative w-full max-w-xs new-tiny:max-w-xs md:max-w-3xl lg:max-w-5xl">
                     <Image
                         src={blogDetails.image}
                         alt="Home Nursing Care"
@@ -64,10 +64,8 @@ export default function BlogDetailsPage({ params }: { params: { slug: string } }
                 </div>
             </div>
 
-            {/* White Section */}
-            {/* <section className="mx-4 w-full md:mx-auto md:w-8/12 bg-white py-8 text-center"> */}
-            <section className="mx-auto w-full py-8 px-4 max-w-xs md:max-w-3xl lg:max-w-5xl">
-                <p className="text-left font-light leading-10">
+            <section className="mx-auto w-full py-8 px-4 max-w-3xl md:max-w-3xl lg:max-w-5xl">
+                <p className="text-left text-xs md:text-md font-normal leading-10">
                     {blogDetails.content}
                 </p>
             </section>

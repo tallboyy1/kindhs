@@ -3,7 +3,8 @@ import FAQAccordion from "../ui/faq/faq";
 
 import styles from "@/app/ui/styles/employee.module.css"
 import HeroComponent from "../ui/hero-component/hero-component";
-import hero from "../../public/heros/employee.png"
+import hero from "../../public/heros/employee.png";
+import DedicatedTeam from "../ui/team-card/dedicated-team";
 
 
 export default function EmployeePortal(){
@@ -11,7 +12,7 @@ export default function EmployeePortal(){
         <>
         <HeroComponent image={hero}/>
             <main className="">
-                <section className="w-72 mx-auto mt-24 mb-60">
+                <section className="w-72 new-tiny:w-80 also-tiny:w-80 md:w-80 mx-auto mt-24 mb-60">
                     <form className="">
                         <div className="mt-4">
                             <label className="ml-4 text-xs font-light">Email</label><br/>
@@ -25,7 +26,9 @@ export default function EmployeePortal(){
                         <p className="w-full text-xs text-red-600 font-semibold text-center">Forgotten your password</p>
                     </form>
                 </section>
-
+                <div className="md:hidden mb-12">
+                    <DedicatedTeam/>
+                </div>
                 <FAQAccordion />
             </main>
         </>

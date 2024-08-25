@@ -8,9 +8,9 @@ export default function Page(){
     return(
         <>
         <HeroComponent image={hero} title="We provide professional care for your best quality of life"/>
-            <main className="md:flex flex-none md:flex-1 mx-4 md:mx-32 my-32">
+            <main className="md:flex flex-none md:flex-1 mx-4 md:mx-32 my-8 md:my-32">
                 <section className="text-blue flex-1 text-xs mx-8">
-                    <div className="w-max mb-20">
+                    <div className="w-max mb-10 md:mb-20">
                         <h2 className="text-secondary text-2xl font-medium mb-2">Corporate Office</h2>
                         <p>1013 Centre Road, Suite 403S</p>
                         <p>Willmington DE, 19805</p>
