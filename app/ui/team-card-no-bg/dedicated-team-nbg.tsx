@@ -38,7 +38,7 @@ export default function DedicatedTeamNBG () {
         <>
             <main className="bg-white py-12">
                 <div className="w-10/12 mx-auto">
-                    <h2 className="text-3xl font-semibold text-secondary md:ml-4">Meet our dedicated <span className="text-blue">team</span></h2>
+                    <h2 className="text-3xl font-semibold text-secondary md:ml-4 text-center md:text-left">Meet our dedicated <span className="text-blue">team</span></h2>
                     {/* <div className="my-20 mx-auto bg-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 justify-around"> */}
                     <div className="mt-10 flex-none md:flex flex-wrap gap-4">
                         {teamData.map((team, index) => (
