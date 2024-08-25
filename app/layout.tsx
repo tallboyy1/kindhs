@@ -8,6 +8,27 @@ import Footer from "./ui/footer/footer";
 export const metadata: Metadata = {
   title: "Kind Hearts Services LLC",
   description: "---",
+  openGraph: {
+    title: "Kind Hearts Services LLC",
+    description: "Compassionate care for you and your loved ones.",
+    url: "https://kindhs.vercel.app",
+    siteName: "Kind Hearts Services LLC",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Kind Hearts Services LLC",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kind Hearts Services LLC",
+    description: "Compassionate care for you and your loved ones.",
+    images: ["/og.png"],
+  },
 };
 
 export default function RootLayout({
