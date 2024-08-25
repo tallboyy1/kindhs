@@ -1,0 +1,11 @@
+.label {
+  padding: 8px 20px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background: linear-gradient(
+    to right,
+    rgba(89, 0, 58, 0.8) 34%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  color: var(--white);
+}

@@ -1,0 +1,20 @@
+.navbar {
+  /* position: relative; */
+  border-radius: 10px;
+  /* z-index: 50; */
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%; /* Aligns right below the Navbar */
+  left: 0;
+  width: 100%;
+  background-color: white; /* or any color */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Optional: Add shadow */
+  z-index: 10; /* Ensures it overlays other content */
+  display: none; /* Hide by default */
+}
+
+.dropdown-menu.open {
+  display: block; /* Show the dropdown when toggled */
+}

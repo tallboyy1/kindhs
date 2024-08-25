@@ -1,0 +1,77 @@
+"use client"
+
+import { useState } from 'react';
+
+import styles from "@/app/ui/styles/faq.module.css";
+import Image from 'next/image';
+
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+const faqData: FAQItem[] = [
+  {
+    question: "Are there any benefits to volunteering?",
+    answer: "Next.js is a React framework that enables server-side rendering and static site generation.",
+  },
+  {
+    question: "Are there any benefits to volunteering?",
+    answer: "React creates a virtual DOM, which is a representation of the real DOM. It updates the DOM based on changes in state and props efficiently.",
+  },
+  {
+    question: "Are there any benefits to volunteering?",
+    answer: "Tailwind CSS is a utility-first CSS framework that allows for rapid UI development.",
+  },
+  // Add more FAQs as needed
+];
+
+const FAQAccordion: React.FC = () => {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const toggleFAQ = (index: number) => {
+    setOpenIndex(index === openIndex ? null : index);
+  };
+
+  return (
+    <div className="w-full max-w-4xl mx-auto mb-20 space-y-4">
+        <h2 className='text-center mb-14 text-1xl md:text-3xl font-semibold'>Have questions? (FAQs)</h2>
+      {faqData.map((faq, index) => (
+        <div key={index} className="mx-5">
+          <button
+            className="w-full mb-5 bg-secondary-14-opacity rounded-xl text-left py-4 px-6 md:px-12 flex justify-between items-center"
+            onClick={() => toggleFAQ(index)}
+          >
+            <span className="font-medium mr-4 md:mr-0 text-xl md:text-2xl">{faq.question}</span>
+            <span>{openIndex === index ? 
+            <>
+                <Image 
+                    alt='Faq Arrow'
+                    src={"/faq/faq-close-arrow.png"}
+                    width={50}
+                    height={50} 
+                />
+            </>
+             : 
+            <>
+                <Image 
+                    alt='Faq Arrow'
+                    src={"/faq/faq-open-arrow.png"}
+                    width={50}
+                    height={50}
+                />
+            </>
+            }</span>
+          </button>
+          {openIndex === index && (
+            <div className="px-6 pb-4 text-gray-600">
+              {faq.answer}
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default FAQAccordion;

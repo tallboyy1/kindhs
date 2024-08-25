@@ -1,0 +1,9 @@
+.newsletter_input {
+  border: 1px solid var(--secondary-color);
+}
+
+.footer_social {
+  padding: 10px;
+  border-radius: 100%;
+  border-color: 1px solid red;
+}
