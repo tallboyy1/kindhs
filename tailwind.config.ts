@@ -41,6 +41,7 @@ const config: Config = {
         'secondary-24-opacity': 'rgba(89, 0, 58, 0.24)',
         'blue-31-opacity': 'rgba(137, 223, 255, 0.31)',
         'other-blue': '#D9E1ED',
+        'hero-dash-blue': '#89DFFF',
         'black-opacity-10': 'rgba(0, 0, 0, 0.6)',
       },
     },

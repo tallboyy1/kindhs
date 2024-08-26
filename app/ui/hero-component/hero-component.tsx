@@ -1,7 +1,7 @@
 import Image, { StaticImageData } from "next/image";
 
 interface HeroProps{
-    image: string | StaticImageData;
+    image: string;
     title?: string;
     content?: string;
 }
@@ -15,9 +15,9 @@ const HeroComponent = ({image, title, content}: HeroProps) => {
             alt="Hero Image"
             className="object-cover w-full h-96"
           /> */}
-          {typeof image === "string" ? (
+          {/* {typeof image === "string" ? (
           <img src={image} alt="Hero Image" className="object-cover w-full h-96" />
-        ) : (
+        ) : ( */}
           <Image
             src={image}
             alt="Hero Image"
@@ -25,8 +25,9 @@ const HeroComponent = ({image, title, content}: HeroProps) => {
             objectFit="cover"
             objectPosition="center"
             quality={100}
+            priority={true}
           />
-        )}
+        {/* )} */}
         </div>
         {/* <div className="absolute inset-y-0 left-0 w-96 bg-gradient-to-r from-black-opacity-10 via-black/1 to-black/0"></div> */}
         <div className=" mx-3 text-center relative flex flex-col justify-center items-center"  style={{height: "80vh"}}>
