@@ -14,13 +14,15 @@ interface Testimonial {
 const testimonials = [
   {
     rating: 5,
-    text: "Great service and amazing experience!",
+    text: "Kind Heart Services, LLC is a human Service company that provides residential services to individuals with intellectual developmental disabilities in Pennsylvania.",
+    // text: "Great service and amazing experience!",
     name: "Emily Davis",
     image: "/testimonials/testifier-1.png",
   },
   {
     rating: 4,
-    text: "Really enjoyed the quality and support.",
+    // text: "Really enjoyed the quality and support.",
+    text: "Kind Heart Services, LLC is a human Service company that provides residential services to individuals with intellectual developmental disabilities in Pennsylvania.",
     name: "Donald Smith",
     image: "/testimonials/testifier-2.png",
   },
@@ -108,7 +110,7 @@ export default function TeamTestimonial () {
         <>
 <main className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 md:gap-4 mx-4 md:mx-8">
   <section className="bg-blue-31-opacity px-4 md:px-0 py-14 rounded-3xl">
-    <div className="h-max my-auto md:w-max md:mx-auto">
+    <div className="h-max md:mt-5 my-auto md:w-max md:mx-auto">
       <h2 className="text-sm new-tiny:text-xl w-max font-semibold text-secondary">
         Meet our dedicated <span className="text-blue">team</span>
       </h2>
@@ -172,9 +174,9 @@ export default function TeamTestimonial () {
       </div>
 
       <div className="max-w-sm mb-8 mx-auto text-center">
-        <span className="text-xs text-center w-full mx-auto text-blue font-light mb-4 overflow-hidden text-ellipsis">
+        <p className="text-xs h-12 text-center w-full mx-auto text-blue font-light mb-4 overflow-hidden text-ellipsis">
           {testimonials[current].text}
-        </span>
+        </p>
       </div>
 
       <p className="text-sm w-max mx-auto text-blue text-center font-semibold">
