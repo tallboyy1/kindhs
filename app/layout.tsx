@@ -4,7 +4,6 @@ import "./globals.css";
 import { instrument_sans } from "@/app/ui/fonts"
 import Navbar from "./ui/navbar/navbar";
 import Footer from "./ui/footer/footer";
-import SplashScreenManager from "./ui/splashscreen/splashscreenmanager";
 
 export const metadata: Metadata = {
   title: "Kind Hearts Services LLC",
@@ -38,11 +37,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={instrument_sans.className}>
-        <SplashScreenManager>
-          <Navbar  />
-          <main className="relative">{children}</main>
-          <Footer />
-        </SplashScreenManager>
+        <Navbar  />
+        <main className="relative">{children}</main>
+        <Footer />
       </body>
     </html>
   );
