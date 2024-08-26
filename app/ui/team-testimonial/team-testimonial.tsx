@@ -81,7 +81,7 @@ export default function TeamTestimonial () {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % testimonials.length);
-    }, 7000);
+    }, 4000);
     return () => clearInterval(interval);
   }, []);
 
