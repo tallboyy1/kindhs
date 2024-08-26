@@ -4,7 +4,7 @@ import styles from "@/app/ui/styles/contact.module.css"
 import { useState } from "react";
 
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { useAnimationInView } from "../framer-stuff/useAnimationView";
 
 const answerFadeUpward = {
   hidden: { opacity: 0, y:15 },
@@ -117,6 +117,8 @@ export default function BookAppointment(){
           setLoading(false);
         }
       };
+      
+      const { ref, shouldAnimate } = useAnimationInView({ triggerOnce: false, threshold: 0.1 });
 
     return (
         <>
@@ -261,12 +263,11 @@ export default function BookAppointment(){
                     <div className=" w-2/3 mx-4 md:mx-auto mt-8 md:mt-16">
                     <h2 className="text-white text-xl mb-12 font-semibold">How we <span className="text-blue">work</span></h2>
                     {faqData.map((faq, index) => {
-                                const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.1 });
                       return(
                               <motion.div 
                                 ref={ref}
                                 initial="hidden"
-                                animate={inView ? "visible" : "hidden"}
+                                animate={shouldAnimate ? "visible" : "hidden"}
                                 variants={answerFadeUpward}
                                 transition={{ duration: 1 }} 
                                 key={index} className="border-l-2 border-white mb-8">

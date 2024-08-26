@@ -2,7 +2,7 @@
 import Bubble from "../bubble-label/bubble-label";
 
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { useAnimationInView } from "../framer-stuff/useAnimationView";
 
 const fadeInFromRightSide = {
     hidden: { opacity: 0, x:25 },
@@ -11,7 +11,7 @@ const fadeInFromRightSide = {
 
 export default function WhoWeAre() {
 
-    const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.1 });
+    const { ref, shouldAnimate } = useAnimationInView({ triggerOnce: false, threshold: 0.1 });
 
     return(
         <>
@@ -33,7 +33,7 @@ export default function WhoWeAre() {
                     <motion.div
                         ref={ref}
                         initial="hidden"
-                        animate={inView ? "visible" : "hidden"}
+                        animate={shouldAnimate ? "visible" : "hidden"}
                         variants={fadeInFromRightSide}
                         transition={{ duration: 1 }}
                     >

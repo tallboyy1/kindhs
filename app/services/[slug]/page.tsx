@@ -6,7 +6,7 @@ import { notFound } from "next/navigation";
 import { useRouter } from "next/router";
 
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { useAnimationInView } from "@/app/ui/framer-stuff/useAnimationView";
 
 const fadeFromLeft = {
   hidden: { opacity: 0, x: -30 },
@@ -73,7 +73,7 @@ export default function ServiceDetailsPage({ params }: { params: { slug: string 
         notFound();
     }
 
-    const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.1 });
+    const { ref, shouldAnimate } = useAnimationInView({ triggerOnce: false, threshold: 0.1 });
 
     return (
         <div>
@@ -131,7 +131,7 @@ export default function ServiceDetailsPage({ params }: { params: { slug: string 
                 <motion.div
                     ref={ref}
                     initial="hidden"
-                    animate={inView ? "visible" : "hidden"}
+                    animate={shouldAnimate ? "visible" : "hidden"}
                     variants={fadeFromLeft}
                     transition={{ duration: 1 }} className="tiny:w-96 md:w-96 mx-auto mt-20">
                     <h3 className="text-lg md:text-2xl font-bold">Who can benefit</h3>

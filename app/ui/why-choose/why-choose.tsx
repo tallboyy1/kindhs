@@ -1,7 +1,6 @@
 "use client"; 
 
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 
 const answerFadeUpward = {
   hidden: { opacity: 0, y:15 },
@@ -20,6 +19,7 @@ const faqInFromLeftSide = {
 
 import Image from "next/image";
 import { useState } from "react";
+import { useAnimationInView } from '../framer-stuff/useAnimationView';
 
 interface FAQItem {
     question: string;
@@ -49,7 +49,7 @@ export default function WhyChoose(){
     const toggleFAQ = (index: number) => {
       setOpenIndex(index === openIndex ? null : index);
     };
-    const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.1 });
+    const { ref, shouldAnimate } = useAnimationInView({ triggerOnce: false, threshold: 0.1 });
 
     return (
         <>
@@ -67,7 +67,7 @@ export default function WhyChoose(){
                                 <motion.div 
                                     ref={ref}
                                     initial="hidden"
-                                    animate={inView ? "visible" : "hidden"}
+                                    animate={shouldAnimate ? "visible" : "hidden"}
                                     variants={faqInFromLeftSide}
                                     transition={{ duration: 1 }}        
                                     key={index} className="bg-white rounded-xl"

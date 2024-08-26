@@ -3,7 +3,7 @@
 import Bubble from "../bubble-label/bubble-label";
 
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { useAnimationInView } from "../framer-stuff/useAnimationView";
 
 const fadeFromRight = {
   hidden: { opacity: 0, x: 30 },
@@ -12,7 +12,7 @@ const fadeFromRight = {
 
 export default function OurValue() {
 
-    const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.1 });
+    const { ref, shouldAnimate } = useAnimationInView({ triggerOnce: false, threshold: 0.1 });
 
     return(
         <>
@@ -33,7 +33,7 @@ export default function OurValue() {
                 <motion.div
                     ref={ref}
                     initial="hidden"
-                    animate={inView ? "visible" : "hidden"}
+                    animate={shouldAnimate ? "visible" : "hidden"}
                     variants={fadeFromRight}
                     transition={{ duration: 1 }} 
                     className="my-auto ml-0 md:ml-8"

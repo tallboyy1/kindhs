@@ -3,7 +3,7 @@
 import Image from "next/image";
 
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { useAnimationInView } from "../framer-stuff/useAnimationView";
 
 const answerFadeUpward = {
   hidden: { opacity: 0, x:-35 },
@@ -12,7 +12,7 @@ const answerFadeUpward = {
 
 
 export default function AboutMission() {
-    const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.1 });
+    const { ref, shouldAnimate } = useAnimationInView({ triggerOnce: false, threshold: 0.1 });
     return (
         <>
             <main className="grid mt-10 sm:grid-cols-1 sm:max-w-2xl md:mx-auto md:max-w-1xl lg:grid-cols-2 gap-4  lg:max-w-7xl mx-auto px-4 md:px-10 my:12 md:my-24">
@@ -34,7 +34,7 @@ export default function AboutMission() {
                         <motion.div
                         ref={ref}
                         initial="hidden"
-                        animate={inView ? "visible" : "hidden"}
+                        animate={shouldAnimate ? "visible" : "hidden"}
                         variants={answerFadeUpward}
                         transition={{ duration: 1 }}>
                             <h2 className="text-2xl md:mx-auto md:max-w-lg font-semibold mt-6 mb-4">Our mission</h2>

@@ -1,12 +1,12 @@
 "use client"
 
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 
 import { useState } from 'react';
 
 import styles from "@/app/ui/styles/faq.module.css";
 import Image from 'next/image';
+import { useAnimationInView } from '../framer-stuff/useAnimationView';
 
 const answerFadeUpward = {
   hidden: { opacity: 0, y: 30 },
@@ -40,8 +40,8 @@ const FAQAccordion: React.FC = () => {
   const toggleFAQ = (index: number) => {
     setOpenIndex(index === openIndex ? null : index);
   };
-  
-  const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.1 });
+
+  const { ref, shouldAnimate } = useAnimationInView({ triggerOnce: false, threshold: 0.1 });
   
   return (
     <div className="w-full max-w-4xl mx-auto mb-20 space-y-4">
@@ -51,7 +51,7 @@ const FAQAccordion: React.FC = () => {
           <motion.div 
           ref={ref}
           initial="hidden"
-          animate={inView ? "visible" : "hidden"}
+          animate={shouldAnimate ? "visible" : "hidden"}
           variants={answerFadeUpward}
           transition={{ duration: 1 }} 
         key={index} className="mx-5">

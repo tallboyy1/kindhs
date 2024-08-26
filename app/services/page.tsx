@@ -7,7 +7,7 @@ import ServicesHero from "../ui/services-hero/services-hero";
 import DiscoverServiceCard from "../ui/services-card/services-card";
 
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { useAnimationInView } from "../ui/framer-stuff/useAnimationView";
 
 const fadeFromLeft = {
   hidden: { opacity: 0, x: -40 },
@@ -16,7 +16,7 @@ const fadeFromLeft = {
 
 
 export default function Page () {
-    const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.1 });
+    const { ref, shouldAnimate } = useAnimationInView({ triggerOnce: false, threshold: 0.1 });
     return (
         <>
             {/* <HeroSection /> */}
@@ -33,7 +33,7 @@ export default function Page () {
                 <motion.div
                     ref={ref}
                     initial="hidden"
-                    animate={inView ? "visible" : "hidden"}
+                    animate={shouldAnimate ? "visible" : "hidden"}
                     variants={fadeFromLeft}
                     transition={{ duration: 1 }}  
                     className="tiny:w-80 sm:w-80 md:w-96 mx-auto mt-20"
