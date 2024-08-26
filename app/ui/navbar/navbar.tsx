@@ -72,7 +72,7 @@ export default function Navbar() {
                 })
                 }
               >
-                  <p className={clsx('text-xs font-light', {'text-secondary font-semibold': pathname === link.href})}>{link.name}</p>
+                  <p className={clsx('text-sm font-light', {'text-secondary font-semibold': pathname === link.href})}>{link.name}</p>
               </Link>
             ))}
           <button>
