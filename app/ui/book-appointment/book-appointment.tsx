@@ -49,13 +49,25 @@ export default function BookAppointment(){
       const [loading, setLoading] = useState(false);
       const [response, setResponse] = useState<string | null>(null);
     
-      const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-        const { name, value, type, checked } = e.target;
-        setFormData((prevData) => ({
-          ...prevData,
-          [name]: type === "checkbox" ? checked : value,
-        }));
+      const handleChange = (
+        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+      ) => {
+        const { name, value, type } = e.target;
+      
+        if (type === "checkbox" && e.target instanceof HTMLInputElement) {
+          const { checked } = e.target;
+          setFormData((prevData) => ({
+            ...prevData,
+            [name]: checked,
+          }));
+        } else {
+          setFormData((prevData) => ({
+            ...prevData,
+            [name]: value,
+          }));
+        }
       };
+      
     
       const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
