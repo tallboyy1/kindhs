@@ -43,6 +43,7 @@ const config: Config = {
         'other-blue': '#D9E1ED',
         'hero-dash-blue': '#89DFFF',
         'black-opacity-10': 'rgba(0, 0, 0, 0.6)',
+        'navbar': 'rgba(255, 255, 255, 0.89)'
       },
     },
   },

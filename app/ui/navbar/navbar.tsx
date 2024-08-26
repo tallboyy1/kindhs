@@ -1,4 +1,4 @@
-'use client';  // Declares the component as a client component
+'use client'; 
 
 import React, { useState } from 'react';
 import clsx from 'clsx';
@@ -49,8 +49,8 @@ export default function Navbar() {
 
 
   return (
-    <nav className="absolute top-2 md:top-4 left-2 md:left-4 right-2 md:right-4 z-50 rounded-lg bg-white">
-      <div className="py-10 px-2 lg:px-4 flex items-center justify-between h-16">
+    <nav className="absolute top-2 md:top-4 left-2 md:left-4 right-2 md:right-4 z-50 rounded-xl bg-navbar">
+      <div className="py-10 pl-2 pr-6 lg:px-4 flex items-center justify-between h-16">
         <div className="flex items-center">
           <img
           alt="Kind Hearts Services Logo"
