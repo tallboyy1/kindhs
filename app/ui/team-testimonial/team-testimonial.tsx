@@ -140,9 +140,9 @@ export default function TeamTestimonial () {
     </div>
   </section>
   <section className="bg-blue-31-opacity py-2 md:py-8 rounded-3xl">
-    <div className="w-max mx-auto">
+    {/* <div className="w-max mx-auto"> */}
     <div className="p-4">
-    <h2 className="text-lg mb-7 new-tiny:text-xl w-max mx-auto font-semibold text-blue">What our clients say</h2>
+    <h2 className="text-lg mb-5 new-tiny:text-xl w-max mx-auto font-semibold text-blue">What our clients say</h2>
       {/* Star Ratings */}
       <div className="flex justify-center mb-4 w-max mx-auto">
         {[...Array(5)].map((_, i) => (
@@ -152,7 +152,7 @@ export default function TeamTestimonial () {
             width="20"
             height="20"
             xmlns="http://www.w3.org/2000/svg"
-            className="star-icon mx-2"
+            className="star-icon"
             style={{marginLeft: "3px", marginRight: "3px"}}
         >
             <defs>
@@ -171,18 +171,17 @@ export default function TeamTestimonial () {
         ))}
       </div>
 
-      {/* Testimonial Text */}
-      {/* <p className="text-xs max-w-auto mx-auto md:text-sm text-blue text-center font-light mb-4">
-        {testimonials[current].text}
-      </p> */}
+      <div className="max-w-sm mb-8 mx-auto text-center">
+        <span className="text-xs text-center w-full mx-auto text-blue font-light mb-4 overflow-hidden text-ellipsis">
+          {testimonials[current].text}
+        </span>
+      </div>
 
-      {/* Testimonial Giver's Name */}
       <p className="text-sm w-max mx-auto text-blue text-center font-semibold">
         {testimonials[current].name}
       </p>
 
-      {/* Photo Thumbnails with Horizontal Scrolling */}
-      <div className="mx-auto w-max flex justify-center items-center mt-6 md:mt-10 space-x-4">
+      <div className="mx-auto w-max flex justify-center items-center mt-6 md:mt-10 space-x-2 md:space-x-4">
         {getVisibleTestimonials().map((testimonial, index) => (
           <div
             key={index}
@@ -202,7 +201,7 @@ export default function TeamTestimonial () {
         ))}
       </div>
     </div>
-    </div>
+    {/* </div> */}
     </section>
 </main>
         </>
