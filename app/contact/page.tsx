@@ -1,10 +1,58 @@
+"use client";
+
 import styles from "@/app/ui/styles/contact.module.css"
 import HeroComponent from "../ui/hero-component/hero-component"
 import hero from "../../public/heros/contact.png"
+import { useState } from "react";
 
 
 
 export default function Page(){
+
+
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
+      const [isSubmitting, setIsSubmitting] = useState(false);
+      const [isSubmitted, setIsSubmitted] = useState(false);
+    
+      const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setFormData({
+          ...formData,
+          [e.target.name]: e.target.value,
+        });
+      };
+    
+      const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+    
+        const res = await fetch("/api/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        });
+    
+        if (res.ok) {
+          setIsSubmitted(true);
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            message: "",
+          });
+        } else {
+          alert("There was an error submitting the form. Please try again.");
+        }
+        setIsSubmitting(false);
+      };
+    
+
     return(
         <>
         <HeroComponent image={hero} title="We provide professional care for your best quality of life"/>
@@ -28,24 +76,66 @@ export default function Page(){
                     </div>
                 </section>
                 <section className="flex-1">
-                    <form className={styles.contactForm}>
-                        <div className="mb-5">
-                            <input className={`${styles.input} rounded-lg py-3 px-3 text-xs w-full`} type="text" placeholder="Your Name" required />
-                        </div>
-                        <div className="flex md:gap-5 lg:gap-5 flex-wrap">
-                            <div className="w-full md:flex-1 lg:flex-1 mb-5">
-                                <input className={`${styles.input} rounded-lg py-3 px-3 text-xs w-full`} type="email" placeholder="Your Email"/>
-                            </div>
-                            <div className="w-full md:flex-1 lg:flex-1 mb-5">
-                                <input className={`${styles.input} rounded-lg py-3 px-3 text-xs w-full`} type="phone" placeholder="Your Phone"/>
-                            </div>
-                        </div>
-                        <div className="mb-5">
-                            <textarea rows={10} className={`${styles.input} rounded-lg py-3 px-3 text-xs w-full`} name="message" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" className="w-full md:w-max px-8 py-4 rounded-lg bg-secondary text-white text-sm">Submit Message</button>
-                    </form>
-                </section>
+          <form onSubmit={handleSubmit} className={styles.contactForm}>
+            {/* Name input */}
+            <div className="mb-5">
+              <input
+                className={`${styles.input} rounded-lg py-3 px-3 text-xs w-full`}
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="Your Name *"
+                required
+              />
+            </div>
+            {/* Email and Phone inputs */}
+            <div className="flex md:gap-5 lg:gap-5 flex-wrap">
+              <div className="w-full md:flex-1 lg:flex-1 mb-5">
+                <input
+                  className={`${styles.input} rounded-lg py-3 px-3 text-xs w-full`}
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="Your Email"
+                />
+              </div>
+              <div className="w-full md:flex-1 lg:flex-1 mb-5">
+                <input
+                  className={`${styles.input} rounded-lg py-3 px-3 text-xs w-full`}
+                  type="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  placeholder="Your Phone *"
+                  required
+                />
+              </div>
+            </div>
+            {/* Message input */}
+            <div className="mb-5">
+              <textarea
+                rows={10}
+                className={`${styles.input} rounded-lg py-3 px-3 text-xs w-full`}
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                placeholder="Your Message *"
+                required
+              ></textarea>
+            </div>
+            {/* Submit button */}
+            <button
+              type="submit"
+              className="w-full md:w-max px-8 py-4 rounded-lg bg-secondary text-white text-sm"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? "Submitting..." : "Submit Message"}
+            </button>
+            {isSubmitted && <p className="mt-4 rounded-lg bg-green text-sm text-white py-4 px-8">Message sent successfully! We will revert momentarily.</p>}
+          </form>
+        </section>
             </main>
 
             <div>
