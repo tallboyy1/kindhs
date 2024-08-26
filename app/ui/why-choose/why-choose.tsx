@@ -1,5 +1,23 @@
 "use client"; 
 
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+
+const answerFadeUpward = {
+  hidden: { opacity: 0, y:15 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const faqInFromLeftSide = {
+    hidden: { opacity: 0, x:-15 },
+    visible: { opacity: 1, x: 0 },
+};
+
+// const faqInFromRightSide = {
+//     hidden: { opacity: 0, x:-15 },
+//     visible: { opacity: 1, x: 0 },
+// };
+
 import Image from "next/image";
 import { useState } from "react";
 
@@ -43,8 +61,17 @@ export default function WhyChoose(){
                         <div className="h-64">
 
                         <div className="h-full w-full max-w-xl mx-auto md:my-auto space-y-4">
-                            {faqData.map((faq, index) => (
-                                <div key={index} className="bg-white rounded-xl">
+                            {faqData.map((faq, index) =>{ 
+                                const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.1 });
+                                return (
+                                <motion.div 
+                                    ref={ref}
+                                    initial="hidden"
+                                    animate={inView ? "visible" : "hidden"}
+                                    variants={faqInFromLeftSide}
+                                    transition={{ duration: 1 }}        
+                                    key={index} className="bg-white rounded-xl"
+                                >
                                     <div className="w-full md:w-96">
                                         <button
                                             className="w-full text-left py-4 px-6 flex justify-between items-center"
@@ -61,13 +88,18 @@ export default function WhyChoose(){
                                              }</span>
                                         </button>
                                         {openIndex === index && (
-                                            <div className="px-6 pb-4 text-black text-xs w-96">
+                                            <motion.div 
+                                                initial="hidden"
+                                                animate="visible"
+                                                variants={answerFadeUpward}
+                                                transition={{ duration: 1 }}
+                                                className="px-6 pb-4 text-black text-xs w-96"
+                                            >
                                                 {faq.answer}
-                                            </div>
-                                        )}
+                                            </motion.div>                                        )}
                                     </div>
-                                </div>
-                            ))}
+                                </motion.div>
+                            )})}
                         </div>
                         </div>
 
@@ -83,7 +115,7 @@ export default function WhyChoose(){
                                     priority={true}
                                     quality={100}
                                     className="rounded-xl"
-                                    />
+                                />
                             </div>
                 </section>
             </main>

@@ -3,6 +3,14 @@
 import styles from "@/app/ui/styles/contact.module.css"
 import { useState } from "react";
 
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+
+const answerFadeUpward = {
+  hidden: { opacity: 0, y:15 },
+  visible: { opacity: 1, y: 0 },
+};
+
 
 interface FAQItem {
     question: string;
@@ -252,8 +260,16 @@ export default function BookAppointment(){
                 <section className="flex-1">
                     <div className=" w-2/3 mx-4 md:mx-auto mt-8 md:mt-16">
                     <h2 className="text-white text-xl mb-12 font-semibold">How we <span className="text-blue">work</span></h2>
-                    {faqData.map((faq, index) => (
-                                <div key={index} className="border-l-2 border-white mb-8">
+                    {faqData.map((faq, index) => {
+                                const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.1 });
+                      return(
+                              <motion.div 
+                                ref={ref}
+                                initial="hidden"
+                                animate={inView ? "visible" : "hidden"}
+                                variants={answerFadeUpward}
+                                transition={{ duration: 1 }} 
+                                key={index} className="border-l-2 border-white mb-8">
                                         <button
                                             className="w-full text-left pb-0 px-3 flex justify-between items-center"
                                             onClick={() => toggleFAQ(index)}
@@ -261,12 +277,18 @@ export default function BookAppointment(){
                                             <span className="font-normal text-white text:lg md:text-xl font-regular">{faq.question}</span>
                                         </button>
                                     {openIndex === index && (
-                                        <div className="px-3 pt-4 text-white text-xs">
-                                        <span className="font-extralight">{faq.answer}</span>
-                                        </div>
+                                        <motion.div 
+                                          initial="hidden"
+                                          animate="visible"
+                                          variants={answerFadeUpward}
+                                          transition={{ duration: 1 }}
+                                          className="px-3 pt-4 text-white text-xs"
+                                        >
+                                          <span className="font-extralight">{faq.answer}</span>
+                                        </motion.div>
                                     )}
-                                </div>
-                            ))}
+                              </motion.div>
+                            )})}
                     </div>
                 </section>
             </main>

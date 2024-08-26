@@ -1,7 +1,33 @@
+"use client";
+
 import DedicatedTeam from "@/app/ui/team-card/dedicated-team";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { useRouter } from "next/router";
+
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+
+const fadeFromLeft = {
+  hidden: { opacity: 0, x: -30 },
+  visible: { opacity: 1, x: 0 },
+};
+
+const fadeFromLeft1 = {
+    hidden: { opacity: 0, x: -40 },
+    visible: { opacity: 1, x: 0 },
+};  
+
+const fadeFromRight1 = {
+    hidden: { opacity: 0, x: 40 },
+    visible: { opacity: 1, x: 0 },
+};  
+
+const fadeUpward = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+};
+  
 
 interface BlogDetails {
     title: string;
@@ -47,14 +73,36 @@ export default function ServiceDetailsPage({ params }: { params: { slug: string 
         notFound();
     }
 
+    const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.1 });
+
     return (
         <div>
             {/* Colored Section */}
             <section className="bg-secondary-24-opacity py-8 text-center flex flex-col items-center justify-center" style={{height: "80vh"}}>
             {/* <section className="bg-secondary py-8 text-center flex flex-col items-center justify-center"> */}
-                <h1 className="text-secondary text-2xl mb-4 mt-10 md:text-3xl lg:text-5xl font-bold">{serviceDetails.title}</h1>
-                <p className="text-secondary text-xs w-9/12 mb-4 leading-6">{serviceDetails.content1}</p>
-                <button className="py-3 px-12 bg-blue text-xs text-white rounded-full">Schedule your consultation</button>
+                <motion.h1 
+                    initial="hidden"
+                    animate="visible"
+                    variants={fadeUpward}
+                    transition={{ duration: 1 }} 
+                    className="text-secondary text-2xl mb-4 mt-10 md:text-3xl lg:text-5xl font-bold"
+                >
+                    {serviceDetails.title}
+                </motion.h1>
+                <motion.p 
+                    initial="hidden"
+                    animate="visible"
+                    variants={fadeUpward}
+                    transition={{ duration: 3 }} 
+                    className="text-secondary text-xs w-9/12 mb-4 leading-6"
+                >
+                    {serviceDetails.content1}
+                </motion.p>
+                <motion.button
+                    initial="hidden"
+                    animate="visible"
+                    variants={fadeUpward}
+                    transition={{ duration: 5 }} className="py-3 px-12 bg-blue text-xs text-white rounded-full">Schedule your consultation</motion.button>
             </section>
 
             {/* Image Section */}
@@ -80,7 +128,12 @@ export default function ServiceDetailsPage({ params }: { params: { slug: string 
             </section>
             
             <section className="flex-none lg:justify-around lg:flex gap-20 mx-4 md:mx-12 mt-15 mb-20">
-                <div className="tiny:w-96 md:w-96 mx-auto mt-20">
+                <motion.div
+                    ref={ref}
+                    initial="hidden"
+                    animate={inView ? "visible" : "hidden"}
+                    variants={fadeFromLeft}
+                    transition={{ duration: 1 }} className="tiny:w-96 md:w-96 mx-auto mt-20">
                     <h3 className="text-lg md:text-2xl font-bold">Who can benefit</h3>
                     <p className="text-xs font-light leading-5 my-4">Our values guide everything we do. We believe in Compassion, Integrity, Excellence, Respect, and Innovation.</p>
                     <div className="flex mb-4 items-center">
@@ -135,7 +188,7 @@ export default function ServiceDetailsPage({ params }: { params: { slug: string 
                             <p className="text-xs font-light text-black">Family caregivers who require respite and support in caring for.</p>
                         </div>
                     </div>
-                </div>
+                </motion.div>
                 <div className="mt-10 w-max mx-auto">
                     <div className="w-72 also-tiny:w-80 tiny:w-96 md:w-96 mx-auto lg:w-full">
                         <img 

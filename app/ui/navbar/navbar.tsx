@@ -77,7 +77,7 @@ export default function Navbar() {
             ))}
           <button>
           <Link
-            href="/donate"
+            href="/"
             className="text-white text-sm font-thin bg-secondary ml-8 px-12 py-2 rounded-md"
           >
             Donate
@@ -127,7 +127,7 @@ export default function Navbar() {
           })}
           <button className='mx-9 mb-9 mt-4'>
           <Link
-            href="/donate"
+            href="/"
             className="text-white bg-secondary px-12 py-2 rounded-md"
           >
             Donate

@@ -81,7 +81,7 @@ export default function Footer(){
                                     <div> 
                                         <li className="mb-3"><Link href="employee-portal"><small>Employee Portal</small></Link></li>
                                         <li className="mb-3"><Link href="blog"><small>Blog</small></Link></li>
-                                        <li className="mb-3"><Link href="contact"><small>Donate</small></Link></li>
+                                        <li className="mb-3"><Link href="contact"><small>Contact</small></Link></li>
                                     </div>
                                 </div>
                             </ul>
