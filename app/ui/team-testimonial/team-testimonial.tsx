@@ -14,15 +14,13 @@ interface Testimonial {
 const testimonials = [
   {
     rating: 5,
-    text: "Kind Heart Services, LLC is a human Service company that provides residential services to individuals with intellectual developmental disabilities in Pennsylvania.",
-    // text: "Great service and amazing experience!",
+    text: "Great service and amazing experience!",
     name: "Emily Davis",
     image: "/testimonials/testifier-1.png",
   },
   {
     rating: 4,
-    // text: "Really enjoyed the quality and support.",
-    text: "Kind Heart Services, LLC is a human Service company that provides residential services to individuals with intellectual developmental disabilities in Pennsylvania.",
+    text: "Really enjoyed the quality and support.",
     name: "Donald Smith",
     image: "/testimonials/testifier-2.png",
   },
