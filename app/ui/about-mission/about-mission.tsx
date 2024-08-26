@@ -19,7 +19,7 @@ export default function AboutMission() {
                 </div>
                 <div>
                     <div className="md:max-w-lg md:mx-auto lg:w-max lg:mx-auto">
-                        <Image src="/about/mission.png" alt="mission png" width={500} height={200} className="rounded-3xl"/>
+                        <Image src="/about/mission.png" alt="mission png" quality={100} priority={true} width={500} height={200} className="rounded-3xl"/>
                     </div>
                 </div>
             </main>

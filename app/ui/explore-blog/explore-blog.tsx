@@ -49,10 +49,11 @@ export default function ExploreBlog() {
                                         <div className="my-auto">
                                             <Image 
                                                 src={"/home/explore-blog-arrow.png"} 
-                                                alt="explore blog"
+                                                alt="explore blog arrow"
                                                 width={30} 
                                                 height={30}
-                                                />
+                                                priority={true}
+                                            />
                                         </div>
                                     </div>
                                 </div>

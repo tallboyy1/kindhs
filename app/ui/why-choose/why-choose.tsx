@@ -53,10 +53,10 @@ export default function WhyChoose(){
                                             <span className="font-medium text-black text-sm font-regular">{faq.question}</span>
                                             <span>{openIndex === index ?
                                              <>
-                                                <Image src="/home/why-choose-close.png" alt="Close Accordion" width={20} height={30}/>
+                                                <Image src="/home/why-choose-close.png" priority={true} quality={100} alt="Close Accordion Icon" width={20} height={30}/>
                                              </> : 
                                              <>
-                                                <Image src="/home/why-choose-open.png" alt="Close Accordion" width={20} height={30}/>
+                                                <Image src="/home/why-choose-open.png" priority={true} quality={100} alt="Open Accordion Icon" width={20} height={30}/>
                                              </>
                                              }</span>
                                         </button>
@@ -80,6 +80,8 @@ export default function WhyChoose(){
                                     alt="Why Choose us Image" 
                                     width={600} 
                                     height={100}
+                                    priority={true}
+                                    quality={100}
                                     className="rounded-xl"
                                     />
                             </div>

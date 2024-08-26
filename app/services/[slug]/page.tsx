@@ -21,10 +21,10 @@ const serviceDetailsData: Record<string, BlogDetails> = {
         image: "/services/details/service-1.png",
         content1:  " Through the residential program offered by Kind Heart Services, individuals with disabilities can live autonomous lives in their own homes. The people we assist in our residential program are capable of choosing where and how they choose to live. Kind Heart services collaborate with families to make sure the people we serve fulfill their dream of having a comfortable place to call home. ",
         content2: "Our personalized living spaces prioritize the individuals we assist, giving them every chance to create the life they envision in a house of their choosing and a neighborhood they adore. They make the decisions as homeowners; our job is to just provide them with the resources they require to succeed. In order to provide the best support possible, we work closely with the individuals we support to design fully customized programs that take into account their behavioral, mental, social, and medical needs. The results of our Residential Program show how important it is for individuals with disabilities to live independently, especially when they are supported by Direct Support Professionals who are empathetic and will value their choices above all else. Together, we develop and learn, and we have a strong commitment to helping the people we serve succeed in their communities.",
-        benefit1: "Seniors who wish to age in place and maintain their independence.",
-        benefit2: "People recovering from illness, injury, or surgery who require.",
-        benefit3: "People with chronic conditions or disabilities who need ongoing.",
-        benefit4: "Family caregivers who require respite and support in caring for.",
+        // benefit1: "Seniors who wish to age in place and maintain their independence.",
+        // benefit2: "People recovering from illness, injury, or surgery who require.",
+        // benefit3: "People with chronic conditions or disabilities who need ongoing.",
+        // benefit4: "Family caregivers who require respite and support in caring for.",
     },
     "community-support": {
         title: "Community Support",
@@ -82,61 +82,57 @@ export default function ServiceDetailsPage({ params }: { params: { slug: string 
             <section className="flex-none lg:justify-around lg:flex gap-20 mx-4 md:mx-12 mt-15 mb-20">
                 <div className="tiny:w-96 md:w-96 mx-auto mt-20">
                     <h3 className="text-lg md:text-2xl font-bold">Who can benefit</h3>
-                    <p className="text-xs font-light leading-2 my-4">Our values guide everything we do. We believe in Compassion, Integrity, Excellence, Respect, and Innovation.</p>
+                    <p className="text-xs font-light leading-5 my-4">Our values guide everything we do. We believe in Compassion, Integrity, Excellence, Respect, and Innovation.</p>
                     <div className="flex mb-4 items-center">
                         <div className="">
                             <Image 
-                                // src={"/services/experienced-team.png"} 
                                 src={"/services/details/benefit.svg"} 
-                                alt="" 
+                                alt="benefit icon" 
                                 width={30}
                                 height={60}
                             />
                         </div>
                         <div className="ml-2">
-                            <p className="text-xs font-light ">{serviceDetails.benefit1}</p>
+                            <p className="text-xs font-light text-black">Seniors who wish to age in place and maintain their independence.</p>
                         </div>
                     </div>
                     <div className="flex mb-4 items-center">
                         <div className="">
                             <Image 
                                 src={"/services/details/benefit.svg"} 
-                                // src={"/services/experienced-team.png"}
-                                alt="" 
+                                alt="benefit icon" 
                                 width={30}
                                 height={60}
                             />
                         </div>
                         <div className="ml-2">
-                            <p className="text-xs font-light ">{serviceDetails.benefit2}</p>
+                            <p className="text-xs font-light text-black">People recovering from illness, injury, or surgery who require.</p>
                         </div>
                     </div>
                     <div className="flex mb-4 items-center">
                         <div className="">
                             <Image 
-                                // src={"/services/experienced-team.png"} 
                                 src={"/services/details/benefit.svg"} 
-                                alt="" 
+                                alt="benefit icon" 
                                 width={30}
                                 height={60}
                             />
                         </div>
                         <div className="ml-2">
-                            <p className="text-xs font-light ">{serviceDetails.benefit3}</p>
+                            <p className="text-xs font-light text-black">People with chronic conditions or disabilities who need ongoing.</p>
                         </div>
                     </div>
                     <div className="flex items-center">
                         <div className="">
                             <Image 
                                 src={"/services/details/benefit.svg"} 
-                                // src={"/services/experienced-team.png"}
-                                alt="" 
+                                alt="benefit icon" 
                                 width={30}
                                 height={60}
                             />
                         </div>
                         <div className="ml-2">
-                            <p className="text-xs font-light ">{serviceDetails.benefit4}</p>
+                            <p className="text-xs font-light text-black">Family caregivers who require respite and support in caring for.</p>
                         </div>
                     </div>
                 </div>
@@ -158,19 +154,19 @@ export default function ServiceDetailsPage({ params }: { params: { slug: string 
                 <h1 className="text-black text-3xl w-max mx-auto font-semibold">How it works</h1>
                 <main className="w-9/12 my-10 mx-auto bg-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 lg:gap-16">
                     <div className="mb-4 lg:mb-0 text-center">
-                        <Image src={"/services/details/how-1.svg"} className="mx-auto" alt="" width={50} height={30}/>
+                        <Image src={"/services/details/how-1.svg"} className="mx-auto" alt="image of step 1" width={50} height={30} priority={true}/>
                         <h1 className="text-secondary w-max mx-auto text-2xl my-4 font-bold">Consultation</h1>
                         <span className="text-black leading-1 w-max text-xs">Thorough assessments conducted by our care team to understand your medical history</span>
                     </div>
 
                     <div className="mb-10 lg:mb-0 text-center">
-                        <Image src={"/services/details/how-2.svg"} className="mx-auto" alt="" width={50} height={30}/>
+                        <Image src={"/services/details/how-2.svg"} className="mx-auto" alt="image of step 2" width={50} height={30} priority={true}/>
                         <h1 className="text-secondary w-max mx-auto text-2xl my-4 font-bold">Customized care plan</h1>
                         <span className="text-black w-max text-xs">A customized care plan is a personalized healthcare strategy designed to meet the unique needs of each patient.</span>
                     </div>
 
                     <div className="mb-10 lg:mb-0 text-center">
-                        <Image src={"/services/details/how-3.svg"} className="mx-auto" alt="" width={50} height={30}/>
+                        <Image src={"/services/details/how-3.svg"} className="mx-auto" alt="image of step 3" width={50} height={30} priority={true}/>
                         <h1 className="text-secondary w-max mx-auto text-2xl my-4 font-bold">Care Implementation</h1>
                         <span className="text-black w-max text-xs">Schedule a consultation with our team to discuss your healthcare needs and preferences.</span>
                     </div>

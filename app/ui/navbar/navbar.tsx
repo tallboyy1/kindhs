@@ -95,11 +95,11 @@ export default function Navbar() {
             {
             isMenuOpen ? 
                 <>
-                  <Image src="/navbar/close-navbar.png" alt='close nav' width={40} height={40} />  
+                  <Image src="/navbar/close-navbar.png" priority={true} alt='close nav' width={40} height={40} />  
                 </> 
               : 
                 <>
-                  <Image src="/navbar/open-navbar.png" alt='open nav' width={40} height={40} />  
+                  <Image src="/navbar/open-navbar.png" priority={true} alt='open nav' width={40} height={40} />  
                 </>
           }
           </button>

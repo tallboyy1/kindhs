@@ -23,12 +23,12 @@ export default function Page () {
                     <p className="text-xs font-light leading-6 my-4">We uphold the highest standards of medical excellence and patient safety, ensuring that every patient receives personalized attention and support throughout their healthcare journey.</p>
                     <div className="flex mb-12 items-center">
                         <div className="w-max">
-                            <Image 
-                                // src={"/services/experienced-team.png"} 
+                            <Image
                                 src={"/services/flexible-scheduling.png"} 
-                                alt="" 
+                                alt="flexible-scheduling icon" 
                                 width={100}
                                 height={60}
+                                priority={true}
                             />
                         </div>
                         <div className="ml-2">
@@ -39,11 +39,11 @@ export default function Page () {
                     <div className="flex items-center">
                         <div className="w-max">
                             <Image 
-                                src={"/services/flexible-scheduling.png"} 
-                                // src={"/services/experienced-team.png"}
-                                alt="" 
+                                src={"/services/flexible-scheduling.png"}
+                                alt="flexible-scheduling icon" 
                                 width={100}
                                 height={60}
+                                priority={true}
                             />
                         </div>
                         <div className="ml-2">

@@ -14,6 +14,8 @@ export default function Footer(){
                             width="255"
                             height="60"
                             className="mx-auto"
+                            quality={100}
+                            priority={true}
                         />
                     </div>
                     <div className="mb-4">
@@ -28,33 +30,37 @@ export default function Footer(){
                             <a href="" className="mr-4">
                                 <Image 
                                     src="/footer/facebook.png"
-                                    alt="facebook-logo"
+                                    alt="facebook logo"
                                     width="44"
                                     height="24"
+                                    priority={true}
                                 />
                             </a>
                             <a href="" className="mr-4">
                                 <Image 
                                     src="/footer/instagram.png"
-                                    alt="facebook-logo"
+                                    alt="instagram logo"
                                     width="44"
                                     height="24"
+                                    priority={true}
                                 />
                             </a>
                             <a href="" className="mr-4">
                                 <Image 
                                     src="/footer/linkedin.png"
-                                    alt="facebook-logo"
+                                    alt="linkedin logo"
                                     width="44"
                                     height="24"
+                                    priority={true}
                                 />
                             </a>
                             <a href="" className="mr-4">
                                 <Image 
                                     src="/footer/x.png"
-                                    alt="facebook-logo"
+                                    alt="x formerly twitter logo"
                                     width="44"
                                     height="24"
+                                    priority={true}
                                 />
                             </a>
                         </div>

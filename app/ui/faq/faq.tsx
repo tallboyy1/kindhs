@@ -46,19 +46,23 @@ const FAQAccordion: React.FC = () => {
             <span>{openIndex === index ? 
             <>
                 <Image 
-                    alt='Faq Arrow'
+                    alt='Close Answer'
                     src={"/faq/faq-close-arrow.png"}
                     width={50}
                     height={50} 
+                    quality={100}
+                    priority={true}
                 />
             </>
              : 
             <>
                 <Image 
-                    alt='Faq Arrow'
+                    alt='Open Answer'
                     src={"/faq/faq-open-arrow.png"}
                     width={50}
                     height={50}
+                    quality={100}
+                    priority={true}
                 />
             </>
             }</span>

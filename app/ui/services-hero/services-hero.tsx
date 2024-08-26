@@ -18,6 +18,8 @@ const ServicesHero = () => {
               alt=""
               width={800}
               height={200}
+              priority={true}
+              quality={100}
               className="rounded-lg"
             />
           </div>

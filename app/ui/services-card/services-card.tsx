@@ -36,12 +36,14 @@ export default function DiscoverServiceCard() {
         <Link key={index} href={`/services/${service.slug}`} passHref>
             <div className="relative w-full max-w-sm overflow-hidden rounded-2xl shadow-lg">
                 <Image
-                src={service.image}
-                alt={service.title}
-                layout="responsive"
-                width={500}
-                height={300}
-                className="object-cover w-full h-full"
+                    src={service.image}
+                    alt={service.title}
+                    layout="responsive"
+                    width={500}
+                    height={300}
+                    priority={true}
+                    quality={100}
+                    className="object-cover w-full h-full"
                 />
                 <div className="absolute inset-x-0 bottom-0 h-60 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
                 <div className="text-left absolute bottom-0 left-0 right-0 mx-4 mb-2">
@@ -51,7 +53,7 @@ export default function DiscoverServiceCard() {
                 <p className="text-white text-xs mt-2">{service.content}</p>
                 <div className='w-max ml-auto'>
                     <span className="inline-block mt-4 text-white text-xs font-semibold">
-                    Read more <span aria-hidden="true">→</span>
+                    Read more <span aria-hidden="true"><Image className='float-right my-auto mt-1 ml-2' src="/services/discover/external-arrow.svg" alt='external link arrow' width={8} height={6}/> </span>
                     </span>
                 </div>
                 </div>

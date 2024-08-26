@@ -52,6 +52,8 @@ export default function JobOpeningCard() {
                                                 alt="explore blog"
                                                 width={30} 
                                                 height={30}
+                                                quality={100}
+                                                priority={true}
                                                 />
                                         </div>
                                     </div>
