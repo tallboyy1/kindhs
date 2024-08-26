@@ -49,7 +49,7 @@ export default function Navbar() {
 
 
   return (
-    <nav className="absolute top-2 md:top-4 left-2 md:left-4 right-2 md:right-4 z-50 bg-white bg-opacity-30 backdrop-blur-lg rounded-lg">
+    <nav className="absolute top-2 md:top-4 left-2 md:left-4 right-2 md:right-4 z-50 rounded-lg bg-white">
       <div className="py-10 px-2 lg:px-4 flex items-center justify-between h-16">
         <div className="flex items-center">
           <img
@@ -102,9 +102,6 @@ export default function Navbar() {
                   <Image src="/navbar/open-navbar.png" alt='open nav' width={40} height={40} />  
                 </>
           }
-            {/* <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg> */}
           </button>
         </div>
 

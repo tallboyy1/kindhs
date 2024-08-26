@@ -10,6 +10,7 @@ import BookAppointment from "./ui/book-appointment/book-appointment";
 import ExploreBlog from "./ui/explore-blog/explore-blog";
 import FAQAccordion from "./ui/faq/faq";
 import DiscoverServiceCard from "./ui/services-card/services-card";
+import TeamTestimonial from "./ui/team-testimonial/team-testimonial";
 
 export default function Home() {
 
@@ -28,6 +29,7 @@ export default function Home() {
         <WhyChoose />
         <JoinCommunity />
         <WhoWeAre />
+        <TeamTestimonial />
         <Statistics />
         <BookAppointment />
         <div className="mt-12">
