@@ -37,8 +37,8 @@ export default function BookAppointment(){
 
     return (
         <>
-            <main className="p-4 md:p-8 rounded-3xl mx-4 md:mx-16 flex-none md:flex bg-secondary">
-                <section className="bg-white p-2 md:p-8 rounded-lg basis-2/3">
+            <main className="px-4 pb-4 pt-6 md:p-8 rounded-3xl mx-4 md:mx-16 flex-none md:flex bg-secondary">
+                <section className="bg-white px-2 pt-4 pb-4 md:p-8 rounded-lg basis-2/3">
                     <h3 className="text-2xl text-secondary font-medium">Book appointment</h3>
                     <div className="mt-4">
                         <form>
