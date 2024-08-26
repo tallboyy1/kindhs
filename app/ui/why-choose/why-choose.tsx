@@ -49,6 +49,7 @@ export default function WhyChoose(){
     const toggleFAQ = (index: number) => {
       setOpenIndex(index === openIndex ? null : index);
     };
+    const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.1 });
 
     return (
         <>
@@ -62,7 +63,6 @@ export default function WhyChoose(){
 
                         <div className="h-full w-full max-w-xl mx-auto md:my-auto space-y-4">
                             {faqData.map((faq, index) =>{ 
-                                const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.1 });
                                 return (
                                 <motion.div 
                                     ref={ref}
