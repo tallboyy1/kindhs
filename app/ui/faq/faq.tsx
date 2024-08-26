@@ -40,12 +40,13 @@ const FAQAccordion: React.FC = () => {
   const toggleFAQ = (index: number) => {
     setOpenIndex(index === openIndex ? null : index);
   };
-
+  
+  const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.1 });
+  
   return (
     <div className="w-full max-w-4xl mx-auto mb-20 space-y-4">
         <h2 className='text-center mb-14 text-2xl md:text-2xl font-semibold'>Have questions? (FAQs)</h2>
       {faqData.map((faq, index) => {
-        const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.1 });
         return (
           <motion.div 
           ref={ref}
