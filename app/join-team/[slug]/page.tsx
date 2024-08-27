@@ -1,12 +1,11 @@
 import { notFound } from "next/navigation";
 import HeroComponent from "@/app/ui/hero-component/hero-component";
 import hero from "../../../public/heros/join-team.png"
-
 import { sanityClient } from "@/sanity/lib/client";
 import { PortableText } from '@portabletext/react';
 
-export const revalidate = 30; //revalidate every 30 seconds. this enables new stuff to show and prevents the default next js caching behavior
-
+export const revalidate = 0;
+export const dynamic = "force-dynamic";
 
 interface jobInterface {
     role: string;

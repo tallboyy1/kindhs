@@ -3,13 +3,12 @@ import Bubble from "@/app/ui/bubble-label/bubble-label";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { useRouter } from "next/router";
-
 import { sanityClient } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import { PortableText } from '@portabletext/react';
 
-export const revalidate = 30; //revalidate every 30 seconds. this enables new stuff to show and prevents the default next js caching behavior
-
+export const revalidate = 0;
+export const dynamic = "force-dynamic";
 
 interface blogInterface {
     currentSlug: string;
@@ -18,7 +17,6 @@ interface blogInterface {
     coverImage: any;
     content: any;
 }
-
 
 async function getData(slug: string){
     const query = `

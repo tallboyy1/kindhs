@@ -1,11 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { format } from 'date-fns';
-
 import { sanityClient } from "@/sanity/lib/client";
 
-export const revalidate = 30; //revalidate every 30 seconds. this enables new stuff to show and prevents the default next js caching behavior
-
+export const revalidate = 0;
+export const dynamic = "force-dynamic";
 
 interface blogInterface {
     title: string;
