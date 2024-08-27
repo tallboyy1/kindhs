@@ -28,7 +28,7 @@ async function getData(slug: string){
             tag,
             coverImage,
             content,
-        }[0]`;
+        }[0], {}, {cache: "no-store"}`;
 
     const data = await sanityClient.fetch(query);
     return data;

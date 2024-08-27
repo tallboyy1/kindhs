@@ -68,7 +68,7 @@ async function getData(){
             tag,
             date,
             "currentSlug": slug.current
-        }`;
+        }, {}, {cache: "no-store"}`;
 
     const data = await sanityClient.fetch(query);
 

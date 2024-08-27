@@ -39,7 +39,7 @@ async function getData(){
             department,
             status,
             "currentSlug": slug.current
-        }`;
+        }, {}, {cache: "no-store"}`;
 
     const data = await sanityClient.fetch(query);
 
