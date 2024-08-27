@@ -8,6 +8,9 @@ import { sanityClient } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import { PortableText } from '@portabletext/react';
 
+export const revalidate = 30; //revalidate every 30 seconds. this enables new stuff to show and prevents the default next js caching behavior
+
+
 interface blogInterface {
     currentSlug: string;
     title: string;

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
 import { format } from 'date-fns';
 
+export const revalidate = 30; //revalidate every 30 seconds. this enables new stuff to show and prevents the default next js caching behavior
 
 interface blogInterface {
     title: string;

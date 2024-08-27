@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { sanityClient } from "@/sanity/lib/client";
 
+export const revalidate = 30; //revalidate every 30 seconds. this enables new stuff to show and prevents the default next js caching behavior
 
 interface jobInterface {
     role: string;

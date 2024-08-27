@@ -5,6 +5,8 @@ import hero from "../../../public/heros/join-team.png"
 import { sanityClient } from "@/sanity/lib/client";
 import { PortableText } from '@portabletext/react';
 
+export const revalidate = 30; //revalidate every 30 seconds. this enables new stuff to show and prevents the default next js caching behavior
+
 
 interface jobInterface {
     role: string;
