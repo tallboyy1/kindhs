@@ -10,6 +10,7 @@ export const dynamic = "force-dynamic";
 interface jobInterface {
     role: string;
     description: any;
+    status: string;
 }
 
 async function getData(slug: string){
@@ -17,6 +18,7 @@ async function getData(slug: string){
         *[_type == "job" && slug.current == '${slug}']{
             role,
             description,
+            status
         }[0]`;
 
     const data = await sanityClient.fetch(query);
@@ -55,9 +57,14 @@ export default async function BlogDetailsPage({ params }: { params: { slug: stri
                     </div>
                 </div>
 
-                <div className="w-max mx-auto mt-12 mb-16">
-                    <button className="bg-secondary text-white text-sm rounded-lg font-medium py-4 px-24 md:px-20">Apply</button>
-                </div>
+                {
+                    jobDetails.status === "Closed" ? 
+                    <></> 
+                    :
+                    <div className="w-max mx-auto mt-12 mb-16">
+                        <button className="bg-secondary text-white text-sm rounded-lg font-medium py-4 px-24 md:px-20">Apply</button>
+                    </div>
+                }
             </main>
         </>
     );

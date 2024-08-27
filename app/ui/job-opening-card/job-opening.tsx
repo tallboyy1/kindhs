@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { sanityClient } from "@/sanity/lib/client";
+import clsx from "clsx"
 
 export const revalidate = 0;
 export const dynamic = "force-dynamic";
@@ -64,7 +65,12 @@ export default async function JobOpeningCard() {
                                         <span className="text-xs font-normal">{job.department}</span>
                                     </div>
                                     <div className="basis-1/3 flex justify-between">
-                                        <div><span className="text-xs font-normal">{job.status}</span></div>
+                                        <div><span className={clsx("text-xs font-normal",
+                                            {
+                                                "bg-green text-white px-3 py-1": job.status === "Open",
+                                                "bg-red-500 text-white px-3 py-1": job.status === "Closed"
+                                            }
+                                        )}>{job.status}</span></div>
                                         <div className="my-auto">
                                             <Image 
                                                 src={"/home/explore-blog-arrow.png"} 

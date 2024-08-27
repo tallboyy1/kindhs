@@ -41,7 +41,7 @@ export default defineType({
       options: {
         list: [
           { title: 'Open', value: 'Open' },
-          { title: 'Close', value: 'Close' },
+          { title: 'Closed', value: 'Closed' },
         ],
         layout: 'radio',
       },
