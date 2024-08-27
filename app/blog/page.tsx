@@ -4,6 +4,9 @@ import DedicatedTeam from "../ui/team-card/dedicated-team";
 import hero from "../../public/heros/blog.png"
 import HeroComponent from "../ui/hero-component/hero-component";
 
+export const revalidate = 0;
+export const dynamic = "force-dynamic";
+
 
 export default function Page () {
     return (
