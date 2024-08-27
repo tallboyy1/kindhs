@@ -45,9 +45,16 @@ const config: Config = {
         'black-opacity-10': 'rgba(0, 0, 0, 0.6)',
         'navbar': 'rgba(255, 255, 255, 0.89)',
         'green': '#009B19',
+      }, 
+      aspectRatio: {
+        '16/9': '16, 9',
+        '4/3': '4 / 3',
+        '1/1': '1, 1',
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography')
+  ],
 };
 export default config;

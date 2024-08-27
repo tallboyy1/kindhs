@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "@/app/ui/styles/contact.module.css"
-import HeroComponent from "../ui/hero-component/hero-component"
+import HeroComponent from "../../ui/hero-component/hero-component"
 import hero from "../../public/heros/contact.png"
 import { useState } from "react";
 

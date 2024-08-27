@@ -1,43 +1,60 @@
 import Image from "next/image";
 import Link from "next/link";
+import { sanityClient } from "@/sanity/lib/client";
 
 
-interface JobItem {
+interface jobInterface {
     role: string;
     department: string;
     status: string;
-    slug: string;
+    currentSlug: string;
 }
   
-const jobData: JobItem[] = [
-    {
-        role: "Registered Nurse",
-        department: "ER",
-        status: "Open",
-        slug: "registered-nurse"
-    },
-    {
-        role: "Registered Nurse",
-        department: "ER",
-        status: "Open",
-        slug: "registered-nurse"
-    },
-    {
-        role: "Registered Nurse",
-        department: "ER",
-        status: "Open",
-        slug: "registered-nurse"
-    },
-];
+// const jobData: JobItem[] = [
+//     {
+//         role: "Registered Nurse",
+//         department: "ER",
+//         status: "Open",
+//         slug: "registered-nurse"
+//     },
+//     {
+//         role: "Registered Nurse",
+//         department: "ER",
+//         status: "Open",
+//         slug: "registered-nurse"
+//     },
+//     {
+//         role: "Registered Nurse",
+//         department: "ER",
+//         status: "Open",
+//         slug: "registered-nurse"
+//     },
+// ];
 
-export default function JobOpeningCard() {
+async function getData(){
+    const query = `
+        *[_type == "job"] | order(_createdAt desc){
+            role,
+            department,
+            status,
+            "currentSlug": slug.current
+        }`;
+
+    const data = await sanityClient.fetch(query);
+
+    return data;
+}
+
+export default async function JobOpeningCard() {
+    const jobData: jobInterface[] = await getData();
+
     return (
         <>
             <main className="p-4 md:p-8">
                 <h2 className="text-xl md:text-2xl text-center font-semibold">Our current job openings</h2>
                 <div className="mt-12">
                     {jobData.map((job, index) => (
-                        <Link key={index} href={`/join-team/${job.slug}`}>
+                        <Link key={index} href={`/join-team/${job.currentSlug}`}>
                             <div key={index} className="py-8 border-b border-black">
                                 <h4 className="text-lg md:text-sm font-medium">{job.role}</h4>
                                 <div className="flex-none md:flex items-center">
