@@ -18,7 +18,7 @@ async function getData(slug: string){
         *[_type == "job" && slug.current == '${slug}']{
             role,
             description,
-        }[0], {}, {cache: "no-store"}`;
+        }[0]`;
 
     const data = await sanityClient.fetch(query);
 
