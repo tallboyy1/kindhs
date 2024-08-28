@@ -3,6 +3,8 @@ import Image from "next/image"
 import Link from "next/link"
 
 export default function Footer(){
+    const date = new Date();
+    const year = date.getFullYear();
     return (
         <>
             <footer className="flex-none md:flex-none lg:flex gap-5 mx-4">
@@ -109,7 +111,7 @@ export default function Footer(){
                     </div>
                     <div className="flex-none lg:flex">
                         <div className="mb-3 lg:mr-5">
-                            <small>Kind heart services llc © 2024 | All Rights Reserved</small>
+                            <small>Kind heart services llc © {year} | All Rights Reserved</small>
                         </div>
                         <div>
                             <small className="">Terms of Use</small>

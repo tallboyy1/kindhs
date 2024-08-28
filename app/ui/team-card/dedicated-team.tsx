@@ -49,7 +49,20 @@ export default function DedicatedTeam () {
                             style={{
                                 width: "100%",
                                 height: "auto",
-                            }}/>
+                                }}/>
+                            {/* <div className={`w-full h-96 relative`}>
+                                <Image
+                                    src={team.image} 
+                                    alt={`${team.name} 's picture`} 
+                                    layout="fill"
+                                    className="w-full"
+                                    objectFit="cover"
+                                    style={{
+                                        // width: "100%",
+                                        // height: "auto",
+                                    }}
+                                />
+                            </div> */}
                             <div className={`mt-4 pl-4`}>
                                 <p className="text-lg font-semibold">{team.name}</p>
                                 <p className="text-xs">{team.position}</p>
