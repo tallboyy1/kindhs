@@ -39,7 +39,7 @@ export default function Page () {
                     className="tiny:w-80 sm:w-80 md:w-96 mx-auto mt-20"
                 >
                     <h3 className="text-lg md:text-2xl font-bold">Why choose Kind Heart Services</h3>
-                    <p className="text-xs font-light leading-6 my-4">We uphold the highest standards of individual's safety, ensuring that every individual’s receive personalized care and support throughout their healthcare journey.</p>
+                    <p className="text-xs font-light leading-6 my-4">We uphold the highest standards of individual{"'"}s safety, ensuring that every individual’s receive personalized care and support throughout their healthcare journey.</p>
                     <div className="flex mb-12 items-center">
                         <div className="w-max">
                             <Image
