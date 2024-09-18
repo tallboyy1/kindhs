@@ -5,7 +5,7 @@ import DedicatedTeam from "../ui/team-card/dedicated-team"
 import hero from "../../public/heros/join-team.png"
 
 export const revalidate = 0;
-export const dynamic = "force-dynamic";
+// export const dynamic = "force-dynamic";
 
 export default function Page(){
     return (

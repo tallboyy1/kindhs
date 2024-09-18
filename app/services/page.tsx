@@ -38,8 +38,8 @@ export default function Page () {
                     transition={{ duration: 1 }}  
                     className="tiny:w-80 sm:w-80 md:w-96 mx-auto mt-20"
                 >
-                    <h3 className="text-lg md:text-2xl font-bold">Why choose Nursing Care?</h3>
-                    <p className="text-xs font-light leading-6 my-4">We uphold the highest standards of medical excellence and patient safety, ensuring that every patient receives personalized attention and support throughout their healthcare journey.</p>
+                    <h3 className="text-lg md:text-2xl font-bold">Why choose Kind Heart Services</h3>
+                    <p className="text-xs font-light leading-6 my-4">We uphold the highest standards of individual's safety, ensuring that every individual’s receive personalized care and support throughout their healthcare journey.</p>
                     <div className="flex mb-12 items-center">
                         <div className="w-max">
                             <Image
@@ -67,7 +67,7 @@ export default function Page () {
                         </div>
                         <div className="ml-2">
                             <p className="text-lg font-semibold mb-1">Flexible Scheduling</p>
-                            <p className="text-xs font-light ">Our caregivers are trained professionals who truly care about your well-being.</p>
+                            <p className="text-xs font-light ">We exceed expectations in meeting the needs of both individuals and team.</p>
                         </div>
                     </div>
                 </motion.div>

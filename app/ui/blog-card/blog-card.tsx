@@ -1,93 +1,97 @@
 import Link from "next/link";
 import Bubble from "../bubble-label/bubble-label";
-import { sanityClient } from "@/sanity/lib/client";
+// import { sanityClient } from "@/sanity/lib/client";
 import Image from "next/image";
-import { urlFor } from "@/sanity/lib/image";
+// import { urlFor } from "@/sanity/lib/image";
 import { format } from 'date-fns';
 
 export const revalidate = 0;
-export const dynamic = "force-dynamic";
+// export const dynamic = "force-dynamic";
 
 interface blogInterface {
     title: string;
-    coverImage: any;
+    image: any;
     tag: string;
     date: string;
-    currentSlug: string;
+    slug: string;
 }
 
-// const sblogData: BlogCard[] = [
-//     {
-//         title: "The importance of home nursing care",
-//         image: "/blog/blog-1-image.png",
-//         tag: "Home Nursing",
-//         date: "January 24, 2024",
-//         slug: "the-importance-of-home-nursing-care",
-//     },
-//     {
-//         title: "Healthy aging: lifestyle tips for seniors",
-//         image: "/blog/blog-2-image.png",
-//         tag: "Seniors",
-//         date: "January 24, 2024",
-//         slug: "healthy-aging-lifestyle-tips-for-seniors",
-//     },
-//     {
-//         title: "Tips for managing medications at home",
-//         image: "/blog/blog-3-image.png",
-//         tag: "Medication",
-//         date: "January 24, 2024",
-//         slug: "tips-for-managing-medications-at-home",
-//     },
-//     {
-//         title: "The importance of home nursing care",
-//         image: "/blog/blog-1-image.png",
-//         tag: "Home Nursing",
-//         date: "January 24, 2024",
-//         slug: "the-importance-of-home-nursing-care",
-//     },
-//     {
-//         title: "Healthy aging: lifestyle tips for seniors",
-//         image: "/blog/blog-2-image.png",
-//         tag: "Seniors",
-//         date: "January 24, 2024",
-//         slug: "healthy-aging-lifestyle-tips-for-seniors",
-//     },
-//     {
-//         title: "Tips for managing medications at home",
-//         image: "/blog/blog-3-image.png",
-//         tag: "Medication",
-//         date: "January 24, 2024",
-//         slug: "tips-for-managing-medications-at-home",
-//     },
-// ];
+const slugify = (title: string) => {
+    return title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)+/g, "");
+};
 
-async function getData(){
-    const query = `
-        *[_type == "blog"] | order(_createdAt desc){
-            title,
-            coverImage,
-            tag,
-            date,
-            "currentSlug": slug.current
-        }`;
+const blogData: blogInterface[] = [
+    {
+        title: "The importance of home nursing care",
+        image: "/blog/blog-1-image.png",
+        tag: "Home Nursing",
+        date: "January 24, 2024",
+        slug: slugify("The importance of home nursing care"),
+    },
+    {
+        title: "Healthy aging: lifestyle tips for seniors",
+        image: "/blog/blog-2-image.png",
+        tag: "Seniors",
+        date: "January 24, 2024",
+        slug: slugify("Healthy aging: lifestyle tips for seniors"),
+    },
+    {
+        title: "Tips for managing medications at home",
+        image: "/blog/blog-3-image.png",
+        tag: "Medication",
+        date: "January 24, 2024",
+        slug: slugify("Tips for managing medications at home"),
+    },
+    {
+        title: "The importance of home nursing care",
+        image: "/blog/blog-1-image.png",
+        tag: "Home Nursing",
+        date: "January 24, 2024",
+        slug: slugify("The importance of home nursing care"),
+    },
+    {
+        title: "Healthy aging: lifestyle tips for seniors",
+        image: "/blog/blog-2-image.png",
+        tag: "Seniors",
+        date: "January 24, 2024",
+        slug: slugify("Healthy aging: lifestyle tips for seniors"),
+    },
+    {
+        title: "Tips for managing medications at home",
+        image: "/blog/blog-3-image.png",
+        tag: "Medication",
+        date: "January 24, 2024",
+        slug: slugify("Tips for managing medications at home"),
+    },
+];
 
-    const data = await sanityClient.fetch(query);
+// async function getData(){
+//     const query = `
+//         *[_type == "blog"] | order(_createdAt desc){
+//             title,
+//             coverImage,
+//             tag,
+//             date,
+//             "currentSlug": slug.current
+//         }`;
 
-    return data;
-}
+//     const data = await sanityClient.fetch(query);
 
-export default async function BlogCard () {
+//     return data;
+// }
 
-    const blogData: blogInterface[] = await getData();
+export default function BlogCard () {
+
+    // const blogData: blogInterface[] = await getData();
     return (
         <>
             <main>
                 <div className="flex justify-center flex-wrap gap-4">
-                    {blogData.map(({title, tag, coverImage, currentSlug, date}) => (
-                        <Link key={currentSlug} href={`/blog/${currentSlug}`}>
+                    {blogData.map(({title, tag, image, slug, date}) => (
+                        <Link key={slug} href={`/blog/${slug}`}>
                             <div className="w-72 md:w-96 mb-8 relative">
                                 <div className="w-full h-64 relative rounded-xl">
-                                    <Image src={urlFor(coverImage).url()} priority={true} quality={100} layout="fill" objectFit="cover" alt="Blog card image" className="rounded-xl" />
+                                    <Image src={image} priority={true} quality={100} layout="fill" objectFit="cover" alt="Blog card image" className="rounded-xl" />
                                 </div>
                                 {/* <img src={urlFor(coverImage).url()} alt="Blog card image" className="rounded-xl" /> */}
                                 <div className="flex-none md:flex justify-between items-center mt-4 mb-2 md:mb-4">

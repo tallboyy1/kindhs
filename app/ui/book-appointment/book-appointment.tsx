@@ -19,16 +19,16 @@ interface FAQItem {
   
   const faqData: FAQItem[] = [
     {
-      question: "Experienced caregivers",
-      answer: "Our team consists of highly skilled nurses with years of experience in home healthcare.",
+      question: "What is Kind Heart Services?",
+      answer: "Kind Heart Services, LLC is a human Service company that provides residential services to individuals with intellectual developmental disabilities in Pennsylvania.",
     },
     {
-      question: "Compassionate approach",
-      answer: "Our team consists of highly skilled nurses with years of experience in home healthcare.",
+      question: "What is the mission of Kind Heart Services?",
+      answer: "Our mission is to enhance the quality of life and promote personal growth for the individuals we support by encouraging independence and personal choice. We are dedicated to helping each person achieve their fullest potential, ensuring they are valued, respected, and empowered to lead fulfilling lives within their community.",
     },
     {
-      question: "Personalized care plans",
-      answer: "Our team consists of highly skilled nurses with years of experience in home healthcare.",
+      question: "What values guide Kind Heart Services?",
+      answer: "At Kind Heart Services, we value the creation of a peaceful and safe environment where every individual is respected and supported. We continuously assess and improve our person-centered support plans, striving to deliver exceptional care that enhances the quality of life for those we serve. Our commitment is to build a community where everyone is loved for who they are and encouraged to achieve their life goals.",
     },
     // Add more FAQs as needed
   ];
@@ -124,7 +124,7 @@ export default function BookAppointment(){
         <>
             <main className="px-4 pb-4 pt-6 md:p-8 rounded-3xl mx-4 md:mx-16 flex-none md:flex bg-secondary">
                 <section className="bg-white px-2 pt-4 pb-4 md:p-8 rounded-lg basis-2/3">
-                    <h3 className="text-2xl text-secondary font-medium">Book appointment</h3>
+                    <h3 className="text-2xl text-secondary font-medium">Referral Contact</h3>
                     <div className="mt-4">
                         {/* <form>
                             <div className="flex md:gap-5 lg:gap-5 flex-wrap">

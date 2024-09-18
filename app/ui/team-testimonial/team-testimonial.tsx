@@ -53,26 +53,26 @@ interface DedicatedTeam {
 }
 
 const teamData: DedicatedTeam[] = [
-    {
-        name: "Amanda Reed",
-        position: "Registered Nurse",
-        image: "/team/team-1.png",
-    },
-    {
-        name: "Amanda Reed",
-        position: "Registered Nurse",
-        image: "/team/team-2.png",
-    },
-    {
-        name: "Amanda Reed",
-        position: "Registered Nurse",
-        image: "/team/team-3.png",
-    },
-    {
-        name: "Amanda Reed",
-        position: "Registered Nurse",
-        image: "/team/team-4.png",
-    }
+  {
+    name: "Amanda Reed",
+    position: "Chief Executive Officer",
+    image: "/team/team-1.png",
+},
+{
+    name: "Amanda Reed",
+    position: "IDD Program Director",
+    image: "/team/team-2.png",
+},
+{
+    name: "Amanda Reed",
+    position: "IDD Programme Specialist",
+    image: "/team/team-3.png",
+},
+{
+    name: "Amanda Reed",
+    position: "IDD Programme Manager",
+    image: "/team/team-4.png",
+}
 ]
 
 export default function TeamTestimonial () {
@@ -134,7 +134,7 @@ export default function TeamTestimonial () {
       </div>
       <Link href="join-team">
         <button className="text-white bg-secondary text-xs py-2 px-4 rounded-full">
-            View all nurses
+            View our team members
         </button>
       </Link>
     </div>

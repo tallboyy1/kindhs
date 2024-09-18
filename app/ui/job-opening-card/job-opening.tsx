@@ -1,55 +1,62 @@
 import Image from "next/image";
 import Link from "next/link";
-import { sanityClient } from "@/sanity/lib/client";
+// import { sanityClient } from "@/sanity/lib/client";
 import clsx from "clsx"
 
 export const revalidate = 0;
-export const dynamic = "force-dynamic";
+// export const dynamic = "force-dynamic";
 
 interface jobInterface {
     role: string;
     department: string;
     status: string;
-    currentSlug: string;
+    slug: string;
 }
+
+const slugify = (title: string) => {
+    return title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)+/g, "");
+};
   
-// const jobData: JobItem[] = [
-//     {
-//         role: "Registered Nurse",
-//         department: "ER",
-//         status: "Open",
-//         slug: "registered-nurse"
-//     },
-//     {
-//         role: "Registered Nurse",
-//         department: "ER",
-//         status: "Open",
-//         slug: "registered-nurse"
-//     },
-//     {
-//         role: "Registered Nurse",
-//         department: "ER",
-//         status: "Open",
-//         slug: "registered-nurse"
-//     },
-// ];
+const jobData: jobInterface[] = [
+    //Status has only 2 values - "Open" or "Closed"
+    {
+        role: "Registered Nurse",
+        department: "ER",
+        status: "Closed",
+        slug: slugify("Registered Nurse")
+    },
+    {
+        role: "Registered Nurse",
+        department: "ER",
+        status: "Open",
+        slug:  slugify("Registered Nurse")
+    },
+    {
+        role: "Registered Nurse",
+        department: "ER",
+        status: "Open",
+        slug: slugify("Registered Nurse")
+    },
 
-async function getData(){
-    const query = `
-        *[_type == "job"] | order(_createdAt desc){
-            role,
-            department,
-            status,
-            "currentSlug": slug.current
-        }`;
+    // Add more jobs here as needed. Don't forget to add to the job details to the job details page after coming here.
+];
 
-    const data = await sanityClient.fetch(query);
+// async function getData(){
+//     const query = `
+//         *[_type == "job"] | order(_createdAt desc){
+//             role,
+//             department,
+//             status,
+//             "currentSlug": slug.current
+//         }`;
 
-    return data;
-}
+//     const data = await sanityClient.fetch(query);
 
-export default async function JobOpeningCard() {
-    const jobData: jobInterface[] = await getData();
+//     return data;
+// }
+
+export default function JobOpeningCard() {
+    // const jobData: jobInterface[] = await getData();
 
     return (
         <>
@@ -57,7 +64,7 @@ export default async function JobOpeningCard() {
                 <h2 className="text-xl md:text-2xl text-center font-semibold">Our current job openings</h2>
                 <div className="mt-12">
                     {jobData.map((job, index) => (
-                        <Link key={index} href={`/join-team/${job.currentSlug}`}>
+                        <Link key={index} href={`/join-team/${job.slug}`}>
                             <div key={index} className="py-8 border-b border-black">
                                 <h4 className="text-lg md:text-sm font-medium">{job.role}</h4>
                                 <div className="flex-none md:flex items-center">

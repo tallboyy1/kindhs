@@ -10,22 +10,22 @@ interface DedicatedTeam {
 const teamData: DedicatedTeam[] = [
     {
         name: "Amanda Reed",
-        position: "Registered Nurse",
+        position: "Chief Executive Officer",
         image: "/team/team-1.png",
     },
     {
         name: "Amanda Reed",
-        position: "Registered Nurse",
+        position: "IDD Program Director",
         image: "/team/team-2.png",
     },
     {
         name: "Amanda Reed",
-        position: "Registered Nurse",
+        position: "IDD Programme Specialist",
         image: "/team/team-3.png",
     },
     {
         name: "Amanda Reed",
-        position: "Registered Nurse",
+        position: "IDD Programme Manager",
         image: "/team/team-4.png",
     }
 ]

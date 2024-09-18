@@ -63,23 +63,25 @@ export default function Statistics() {
       <div className="mb-10 lg:mb-0 text-center">
         <h1 className="text-secondary w-max mx-auto text-6xl font-bold">
             <span className="flex">
-                <AnimatedCounter from={0} to={300} />
+                <AnimatedCounter from={0} to={24} />
                 <span>+</span>
             </span>
         </h1>
-        <span className="text-blue w-max text-sm">Patients served</span>
+        <span className="text-blue w-max text-sm">Years of Experience</span>
       </div>
 
       <div className="mb-10 lg:mb-0 text-center">
         <h1 className="text-secondary w-max mx-auto text-6xl font-bold">
-          <AnimatedCounter from={0} to={30} />
+          <AnimatedCounter from={0} to={20} />
+          <span>+</span>
         </h1>
         <span className="text-blue w-max text-sm">Caregivers</span>
       </div>
 
       <div className="mb-10 lg:mb-0 text-center">
         <h1 className="text-secondary w-max mx-auto text-6xl font-bold">
-          <AnimatedCounter from={0} to={10} />
+          <AnimatedCounter from={0} to={15} />
+          <span>+</span>
         </h1>
         <span className="text-blue w-max text-sm">Service offered</span>
       </div>
@@ -87,7 +89,7 @@ export default function Statistics() {
       <div className="text-center">
         <h1 className="text-secondary w-max mx-auto text-6xl font-bold">
             <span className="flex">
-                <AnimatedCounter from={0} to={95} />
+                <AnimatedCounter from={0} to={99} />
                 <span>%</span>
             </span>
         </h1>

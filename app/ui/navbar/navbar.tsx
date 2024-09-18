@@ -77,7 +77,7 @@ export default function Navbar() {
             ))}
           <button>
           <Link
-            href="/"
+            href="https://www.paypal.com/donate/?hosted_button_id=3YLGQSE8S34SQ"
             className="text-white text-sm font-thin bg-secondary ml-8 px-12 py-2 rounded-md"
           >
             Donate

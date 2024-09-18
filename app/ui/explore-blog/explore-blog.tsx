@@ -1,56 +1,59 @@
 import Image from "next/image";
 import Link from "next/link";
 import { format } from 'date-fns';
-import { sanityClient } from "@/sanity/lib/client";
 
 export const revalidate = 0;
-export const dynamic = "force-dynamic";
+// export const dynamic = "force-dynamic";
 
 interface blogInterface {
     title: string;
-    by: string;
+    namePosition: string;
     date: string;
-    currentSlug: string;
+    slug: string;
 }
+
+const slugify = (title: string) => {
+    return title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)+/g, "");
+};
   
-// const blogData: BlogItem[] = [
-//     {
-//         title: "The importance of home nursing care",
-//         namePosition: "Amanda Reed, RN",
-//         date: "May 23, 2024",
-//         slug: "the-importance-of-home-nursing-care",
-//     },
-//     {
-//         title: "The importance of home nursing care",
-//         namePosition: "Amanda Reed, RN",
-//         date: "May 23, 2024",
-//         slug: "the-importance-of-home-nursing-care",
-//     },
-//     {
-//         title: "The importance of home nursing care",
-//         namePosition: "Amanda Reed, RN",
-//         date: "May 23, 2024",
-//         slug: "the-importance-of-home-nursing-care",
-//     },
-// ];
+const blogData: blogInterface[] = [
+    {
+        title: "Tips for managing medications at home",
+        namePosition: "Amanda Reed, RN",
+        date: "May 23, 2024",
+        slug: slugify("Tips for managing medications at home"),
+    },
+    {
+        title: "Healthy aging: lifestyle tips for seniors",
+        namePosition: "Amanda Reed, RN",
+        date: "May 23, 2024",
+        slug: slugify("Healthy aging: lifestyle tips for seniors"),
+    },
+    {
+        title: "The importance of home nursing care",
+        namePosition: "Amanda Reed, RN",
+        date: "May 23, 2024",
+        slug: slugify("The importance of home nursing care"),
+    },
+];
 
-async function getData(){
-    const query = `
-        *[_type == "blog"] | order(_createdAt desc){
-            title,
-            by,
-            date,
-            "currentSlug": slug.current
-        }`;
+// async function getData(){
+//     const query = `
+//         *[_type == "blog"] | order(_createdAt desc){
+//             title,
+//             by,
+//             date,
+//             "currentSlug": slug.current
+//         }`;
 
-    const data = await sanityClient.fetch(query);
+//     const data = await sanityClient.fetch(query);
 
-    return data;
-}
+//     return data;
+// }
 
-export default async function ExploreBlog() {
+export default function ExploreBlog() {
 
-    const blogData: blogInterface[] = await getData();
+    // const blogData: blogInterface[] = await getData();
 
     return (
         <>
@@ -58,12 +61,12 @@ export default async function ExploreBlog() {
                 <h2 className="text-2xl font-semibold">Explore our <span className="text-blue">blog</span></h2>
                 <div>
                     {blogData.map((blog) => (
-                        <Link key={blog.currentSlug} href={`/blog/${blog.currentSlug}`}>
+                        <Link key={blog.slug} href={`/blog/${blog.slug}`}>
                             <div className="py-8 border-b border-black">
                                 <h4 className="text-lg md:text-sm font-medium">{blog.title}</h4>
                                 <div className="flex-none md:flex items-center">
                                     <div className="basis-2/3">
-                                        <span className="text-xs font-normal">{blog.by}</span>
+                                        <span className="text-xs font-normal">{blog.namePosition}</span>
                                     </div>
                                     <div className="basis-1/3 flex justify-between">
                                         <div><span className="text-xs font-normal">

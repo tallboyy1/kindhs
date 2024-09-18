@@ -8,24 +8,28 @@ interface ServiceInterface {
     slug: string;
 }
 
+const slugify = (title: string) => {
+    return title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)+/g, "");
+};
+
 const serviceData: ServiceInterface[] = [
     {
         title: "Adult Residential Program",
         image: "/services/discover/service-1.png",
         content:  "Through the residential program offered by Kind Heart Services, individuals with disabilities can live autonomous lives in their own homes.",
-        slug: "adult-residential-program",
+        slug: slugify("Adult Residential Program")
     },
     {
         title: "Community Support",
         image: "/services/discover/service-2.png",
         content:  "The Community Supports Program at Kind Heart Services provides specialized services to assist individuals with disabilities in carrying out daily duties.",
-        slug: "community-support",
+        slug: slugify("Community Support")
     },
     {
         title: "Respite",
         image: "/services/discover/service-3.png",
         content:  "Families that care for a disabled person can take a break from the daily grind that comes with being a caregiver for a disabled person thanks to respite care.",
-        slug: "respite",
+        slug: slugify("Respite")
     }
 ]
 

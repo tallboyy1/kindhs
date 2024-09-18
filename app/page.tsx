@@ -13,7 +13,7 @@ import DiscoverServiceCard from "./ui/services-card/services-card";
 import TeamTestimonial from "./ui/team-testimonial/team-testimonial";
 
 export const revalidate = 0;
-export const dynamic = "force-dynamic";
+// export const dynamic = "force-dynamic";
 
 export default function Home() {
 

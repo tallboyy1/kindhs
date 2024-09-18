@@ -20,16 +20,16 @@ interface FAQItem {
 
 const faqData: FAQItem[] = [
   {
-    question: "Are there any benefits to volunteering?",
-    answer: "Next.js is a React framework that enables server-side rendering and static site generation.",
+    question: " How do I apply for the IDD residential program at Kind Heart Services?",
+    answer: "To apply for our IDD residential program, start by contacting our admissions team to schedule an initial assessment. During this assessment, we’ll review your loved one's needs and determine if our program is a good fit. You’ll need to provide relevant documentation, such as medical records and proof of eligibility. Our team will guide you through the application process and help you complete any necessary forms.",
   },
   {
-    question: "Are there any benefits to volunteering?",
-    answer: "React creates a virtual DOM, which is a representation of the real DOM. It updates the DOM based on changes in state and props efficiently.",
+    question: "What types of services are included in the IDD residential program?",
+    answer: "Our IDD residential program offers a range of services designed to support individuals with intellectual and developmental disabilities. This includes personalized care plans, daily living support, medical care, therapeutic services, and community engagement activities. Our goal is to provide comprehensive support that enhances the quality of life and promotes independence.",
   },
   {
-    question: "Are there any benefits to volunteering?",
-    answer: "Tailwind CSS is a utility-first CSS framework that allows for rapid UI development.",
+    question: "How does Kind Heart Services ensure the safety and well-being of individuals in the IDD residential program?  ",
+    answer: "At Kind Heart Services, we prioritize the safety and well-being of all individuals in our residential program. We maintain a secure and supportive environment with trained staff who provide constant supervision and care. Regular assessments and monitoring ensure that each individual’s needs are met effectively. Additionally, we have protocols in place for emergencies and strive to create a nurturing atmosphere that promotes respect and dignity.",
   },
   // Add more FAQs as needed
 ];

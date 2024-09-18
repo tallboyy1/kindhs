@@ -24,7 +24,7 @@ export default function AboutMission() {
                         transition={{ duration: 1 }} 
                         className="mb-8"
                     >
-                        <h2 className="text-2xl md:mx-auto md:max-w-lg font-semibold mb-4">Dedicated to providing compassionate home nursing care</h2>
+                        <h2 className="text-2xl md:mx-auto md:max-w-lg font-semibold mb-4">Dedicated to providing  exceptional care with compassion and inclusion</h2>
                         <p className="text-xs md:mx-auto md:max-w-lg leading-7">Kind Heart Services, LLC is a human Service company that provides residential services to individuals with intellectual developmental disabilities in Pennsylvania. We are committed to providing quality care and exceptional services to the individuals and families we serve. Our goal is to provide an environment that promotes respect, independence, and inclusion regardless of race, gender, religion, sexual orientation, or medical condition. We strive to ensure that everyone who enters our doors is treated with compassion, respect, and dignity. Kind Heart Services promote community engagement to ensure the individuals we serve have a meaningful, productive, and fulfilling life.</p>
                     </motion.div>
                     <div>

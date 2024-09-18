@@ -14,24 +14,24 @@ export default function HeroSection() {
   const slides = [
     {
       image: hero1,
-      bubbleText: "Compassionate home nursing care",
-      heading: "Bringing heartfelt care to your doorstep",
+      bubbleText: "Compassionate IDD residential program",
+      heading: "Compassionate IDD care.",
       description:
-        "At Nursing Care, we understand the importance of compassionate care that goes beyond just medical assistance.",
+        "At our IDD residential program, we recognize the importance of compassionate care that extends beyond basic support.",
     },
     {
       image: hero2,
-      bubbleText: "Experienced caregivers",
+      bubbleText: "Passionate Caregivers",
       heading: "Your well-being is our priority",
       description:
-        "Our caregivers are highly skilled professionals dedicated to providing personalized care with a touch of compassion.",
+        "Our direct support professionals (DSP) are highly skilled professionals dedicated to providing personalized care with a touch of compassion.",
     },
     {
       image: hero3,
       bubbleText: "Personalized care plans",
       heading: "Tailored care for every individual",
       description:
-        "We create personalized care plans that cater to the unique needs of each patient. One to one relationship.",
+        "We create personalized care plans that cater to the unique needs of each individual. One to one relationship.",
     },
   ];
 

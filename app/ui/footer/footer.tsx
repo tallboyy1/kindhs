@@ -101,8 +101,8 @@ export default function Footer(){
                         <div  className="flex-1">
                             <ul className="list-none">
                                 <h3 className="mb-5 font-medium">Reading Office</h3>
-                                <li className="mb-2"><small>1013 Centre Road, Suite 403S</small></li>
-                                <li className="mb-2"><small>Willmington DE, 19805</small></li>
+                                <li className="mb-2"><small>3608 Saint Lawrence Ave, </small></li>
+                                <li className="mb-2"><small>suite 109 Reading PA, 19606</small></li>
                                 <li className="mb-2"><small>Phone: 484-229-4771</small></li>
                                 <li className="mb-2"><small>Fax: 484-229-7930</small></li>
                                 <li className="mb-2"><small>Email: kindheartservices.com</small></li>
